@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    android:backgroundTint="@color/black"
+    android:backgroundTintMode="add"
+    tools:context=".IngresoActivity">
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/design_default_color_error"
+        android:text="Resgistrarse"
+        tools:layout_editor_absoluteX="219dp"
+        tools:layout_editor_absoluteY="546dp" />
+
+    <ImageView
+        android:id="@+id/imgLogo"
+        android:layout_width="189dp"
+        android:layout_height="124dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="62dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtTitulo"
+        app:srcCompat="@drawable/logotipo" />
+
+    <TextView
+        android:id="@+id/txtTitulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="128dp"
+        android:layout_marginTop="56dp"
+        android:text="CLOSETCLICK"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/edtContrasena"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:background="@color/material_dynamic_neutral60"
+        android:ems="10"
+        android:hint="Contraseña"
+        android:inputType="text"
+        android:minHeight="50dp"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextText" />
+
+    <Button
+        android:id="@+id/btnIngresar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/design_default_color_error"
+        android:text="Ingresar"
+        tools:layout_editor_absoluteX="73dp"
+        tools:layout_editor_absoluteY="546dp" />
+
+    <Button
+        android:id="@+id/btnLimpiar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/design_default_color_error"
+        android:text="Limpiar"
+        tools:layout_editor_absoluteX="73dp"
+        tools:layout_editor_absoluteY="611dp" />
+
+    <EditText
+        android:id="@+id/editTextText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="78dp"
+        android:background="@color/material_dynamic_neutral60"
+        android:minHeight="50dp"
+        android:ems="10"
+        android:inputType="text"
+        android:hint="Usuario"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgLogo" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/design_default_color_error"
+        android:text="Invitado"
+        tools:layout_editor_absoluteX="234dp"
+        tools:layout_editor_absoluteY="611dp" />
+
+    <Switch
+        android:id="@+id/switch1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Guardar información"
+        android:textColor="@color/white"
+        tools:layout_editor_absoluteX="118dp"
+        tools:layout_editor_absoluteY="501dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
