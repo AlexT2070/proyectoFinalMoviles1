@@ -14,10 +14,11 @@
         android:id="@+id/button3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="45dp"
         android:backgroundTint="@color/design_default_color_error"
         android:text="Resgistrarse"
-        tools:layout_editor_absoluteX="219dp"
-        tools:layout_editor_absoluteY="546dp" />
+        app:layout_constraintStart_toEndOf="@+id/btnIngresar"
+        app:layout_constraintTop_toBottomOf="@+id/switch1" />
 
     <ImageView
         android:id="@+id/imgLogo"
@@ -59,19 +60,22 @@
         android:id="@+id/btnIngresar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="73dp"
         android:backgroundTint="@color/design_default_color_error"
         android:text="Ingresar"
-        tools:layout_editor_absoluteX="73dp"
-        tools:layout_editor_absoluteY="546dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/switch1" />
 
     <Button
         android:id="@+id/btnLimpiar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="73dp"
+        android:layout_marginTop="17dp"
         android:backgroundTint="@color/design_default_color_error"
         android:text="Limpiar"
-        tools:layout_editor_absoluteX="73dp"
-        tools:layout_editor_absoluteY="611dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnIngresar" />
 
     <EditText
         android:id="@+id/editTextText"
@@ -91,18 +95,23 @@
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="65dp"
+        android:layout_marginTop="17dp"
         android:backgroundTint="@color/design_default_color_error"
         android:text="Invitado"
-        tools:layout_editor_absoluteX="234dp"
-        tools:layout_editor_absoluteY="611dp" />
+        app:layout_constraintStart_toEndOf="@+id/btnLimpiar"
+        app:layout_constraintTop_toBottomOf="@+id/button3" />
 
     <Switch
         android:id="@+id/switch1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="118dp"
+        android:layout_marginTop="17dp"
+        android:minHeight="50dp"
         android:text="Guardar información"
         android:textColor="@color/white"
-        tools:layout_editor_absoluteX="118dp"
-        tools:layout_editor_absoluteY="501dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edtContrasena" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
