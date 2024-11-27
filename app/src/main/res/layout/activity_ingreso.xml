@@ -11,13 +11,15 @@
     tools:context=".IngresoActivity">
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/btnRegistrarse"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:layout_marginEnd="71dp"
         android:backgroundTint="@color/design_default_color_error"
-        android:text="Resgistrarse"
-        tools:layout_editor_absoluteX="219dp"
-        tools:layout_editor_absoluteY="546dp" />
+        android:text="Registrarse"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/swGuardar" />
 
     <ImageView
         android:id="@+id/imgLogo"
@@ -59,19 +61,23 @@
         android:id="@+id/btnIngresar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="73dp"
+        android:layout_marginTop="18dp"
         android:backgroundTint="@color/design_default_color_error"
         android:text="Ingresar"
-        tools:layout_editor_absoluteX="73dp"
-        tools:layout_editor_absoluteY="546dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/swGuardar" />
 
     <Button
         android:id="@+id/btnLimpiar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="73dp"
+        android:layout_marginTop="17dp"
         android:backgroundTint="@color/design_default_color_error"
         android:text="Limpiar"
-        tools:layout_editor_absoluteX="73dp"
-        tools:layout_editor_absoluteY="611dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnIngresar" />
 
     <EditText
         android:id="@+id/editTextText"
@@ -88,21 +94,28 @@
         app:layout_constraintTop_toBottomOf="@+id/imgLogo" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btnInvitado"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="17dp"
+        android:layout_marginEnd="78dp"
         android:backgroundTint="@color/design_default_color_error"
         android:text="Invitado"
-        tools:layout_editor_absoluteX="234dp"
-        tools:layout_editor_absoluteY="611dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnRegistrarse" />
 
     <Switch
-        android:id="@+id/switch1"
+        android:id="@+id/swGuardar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="118dp"
+        android:layout_marginTop="22dp"
+        android:layout_marginEnd="118dp"
+        android:minHeight="48dp"
         android:text="Guardar información"
         android:textColor="@color/white"
-        tools:layout_editor_absoluteX="118dp"
-        tools:layout_editor_absoluteY="501dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edtContrasena" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,6 +1,7 @@
 package com.example.practica06
 
 import Paciente
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.widget.ArrayAdapter
@@ -10,27 +11,28 @@ import android.widget.ListView
 import android.widget.Switch
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.google.android.material.chip.ChipGroup
 
 class RegistroActivity : AppCompatActivity() {
-    private lateinit var edtNombre: EditText
-    private lateinit var edtDomicilio: EditText
-    private lateinit var correo: ListView
-    private lateinit var telefonos1: Switch
-    private lateinit var telefonos2: Switch
-    private lateinit var telefonos3: Switch
+    private lateinit var Nombre: EditText
+    private lateinit var Contrasena: EditText
+    private lateinit var Correo: EditText
+    private lateinit var Telefono: EditText
+    @SuppressLint("UseSwitchCompatOrMaterialCode")
+    private lateinit var notificaciones: Switch
+
     private val pacientes = mutableListOf<Paciente>()
 
+    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_registro)
 
-        edtNombre = findViewById(R.id.edtNombre)
-        edtDomicilio = findViewById(R.id.edtDomicilio)
-        correo = findViewById(R.id.lstCorreos)
-        telefonos1 = findViewById(R.id.swt1)
-        telefonos2 = findViewById(R.id.swt2)
-        telefonos3 = findViewById(R.id.swt3)
+        Nombre = findViewById(R.id.edtNombre)
+        Contrasena = findViewById(R.id.edtPassword)
+        Correo = findViewById(R.id.edtCorreo)
+        Telefono = findViewById(R.id.edtNumeroTel)
+        notificaciones = findViewById(R.id.swNotificaciones)
+
         val btnRegistrar = findViewById<Button>(R.id.btnRegistrar)
         val btnLimpiar = findViewById<Button>(R.id.btnLimpiar)
         val btnRegresar = findViewById<Button>(R.id.btnRegresar)

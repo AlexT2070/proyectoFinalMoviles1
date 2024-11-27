@@ -1,15 +1,15 @@
-<resources>
-    <string name="app_name">Hospitalito</string>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">ClosetClick</string>
     <string name="nombre">Nombre</string>
     <string name="apellido">Apellido</string>
     <string name="usuario">Usuario</string>
-    <string name="contrasena">Constraseña</string>
+    <string name="contrasena">Contraseña</string>
     <string name="ingresar">Ingresar</string>
     <string name="salir">Salir</string>
     <string name="pedido">Pedido</string>
     <string name="productos">Productos</string>
     <string name="misProductos">Mis productos</string>
-    <string name="nosotros">Nostros</string>
+    <string name="nosotros">Nosotros</string>
     <string name="cerrarSesion">Cerrar Sesion</string>
     <string name="domicilio">Domicilio</string>
     <string name="producto">Producto</string>
@@ -17,6 +17,7 @@
     <string name="tallaMediana">Talla Mediana</string>
     <string name="TallaGrande">Talla Grande</string>
     <string name="telefono">Telelfono</string>
-    <string name="activity_menu">activity_menu</string>
-
+    <string name="activity_menu">Consulta de Producto</string>
+    <string name="back">Regresar</string>
+    <string name="info" tools:ignore="TypographyEllipsis">Información...</string>
 </resources>
