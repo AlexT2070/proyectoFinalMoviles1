@@ -5,6 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/black"
     tools:context=".MainActivity">
 
     <androidx.appcompat.widget.Toolbar
@@ -12,7 +13,7 @@
         android:layout_width="409dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="1dp"
-        android:background="?attr/colorPrimary"
+        android:background="@color/material_dynamic_neutral60"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
         app:layout_constraintStart_toStartOf="parent"
@@ -22,20 +23,21 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="98dp"
-        android:layout_marginTop="29dp"
-        android:text="Hospital San juan"
+        android:layout_marginStart="128dp"
+        android:layout_marginTop="44dp"
+        android:text="CLOSETCLICK"
+        android:textColor="@color/white"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="111dp"
-        android:layout_height="110dp"
-        android:layout_marginStart="128dp"
-        android:layout_marginTop="91dp"
+        android:layout_width="202dp"
+        android:layout_height="193dp"
+        android:layout_marginStart="104dp"
+        android:layout_marginTop="96dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView"
-        app:srcCompat="@drawable/baseline_star_outline_24" />
+        app:srcCompat="@drawable/logotipo" />
 </androidx.constraintlayout.widget.ConstraintLayout>

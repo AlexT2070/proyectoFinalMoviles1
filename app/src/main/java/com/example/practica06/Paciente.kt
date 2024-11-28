@@ -6,3 +6,4 @@ data class Paciente(
     val correo: String,
     val telefono: String
 ) : Serializable
+//Funciona el commit y reciben esto

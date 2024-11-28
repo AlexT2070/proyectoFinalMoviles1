@@ -10,7 +10,7 @@
     tools:context=".RegistroActivity">
 
     <EditText
-        android:id="@+id/edtPassword"
+        android:id="@+id/edtDomicilio"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="42dp"
@@ -26,11 +26,11 @@
         android:id="@+id/txtTitulo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="132dp"
         android:layout_marginTop="20dp"
         android:text="CLOSETCLICK"
         android:textColor="@color/white"
         android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -57,10 +57,10 @@
         android:inputType="text"
         android:minHeight="50dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edtPassword" />
+        app:layout_constraintTop_toBottomOf="@+id/edtDomicilio" />
 
     <EditText
-        android:id="@+id/edtNumeroTel"
+        android:id="@+id/edtnumero"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="58dp"
@@ -77,36 +77,31 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="43dp"
         android:backgroundTint="@color/design_default_color_error"
         android:text="Registrar"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/grpNumeros" />
+        tools:layout_editor_absoluteY="612dp" />
 
     <Button
         android:id="@+id/btnLimpiar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="43dp"
-        android:layout_marginEnd="16dp"
         android:backgroundTint="@color/design_default_color_error"
         android:text="Limpiar"
-        app:layout_constraintEnd_toStartOf="@+id/btnRegresar"
         app:layout_constraintStart_toEndOf="@+id/btnRegistrar"
-        app:layout_constraintTop_toBottomOf="@+id/grpNumeros" />
+        tools:layout_editor_absoluteY="612dp" />
 
     <com.google.android.material.chip.ChipGroup
         android:id="@+id/grpNumeros"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="104dp"
-        android:layout_marginTop="60dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edtNumeroTel">
+        tools:layout_editor_absoluteY="519dp">
 
         <Switch
-            android:id="@+id/swNotificaciones"
+            android:id="@+id/swt1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:minHeight="50dp"
@@ -119,11 +114,10 @@
         android:id="@+id/btnRegresar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="43dp"
-        android:layout_marginEnd="39dp"
+        android:layout_marginStart="16dp"
         android:backgroundTint="@color/design_default_color_error"
         android:text="Regresar"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/grpNumeros" />
+        app:layout_constraintStart_toEndOf="@+id/btnLimpiar"
+        tools:layout_editor_absoluteY="612dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -3,12 +3,26 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/itemRegistrar"
-        android:title="Registrar" />
+        android:id="@+id/itemDeportiva"
+        android:title="Ropa deportiva" />
     <item
-        android:id="@+id/itemConsultar"
-        android:title="Consultar" />
+        android:id="@+id/itemCarrito"
+        android:icon="@drawable/baseline_shopping_cart_24"
+        android:title="Carrito"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/itemCasual"
+        android:title="Ropa casual" />
+    <item
+        android:id="@+id/itemFormal"
+        android:title="Ropa formal" />
     <item
         android:id="@+id/itemSalir"
         android:title="Salir" />
+    <item
+        android:id="@+id/itemLDeseos"
+        android:title="Lista de deseos" />
+    <item
+        android:id="@+id/itemComentarios"
+        android:title="Comentarios" />
 </menu>
