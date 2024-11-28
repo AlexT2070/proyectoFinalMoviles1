@@ -205,7 +205,7 @@
         android:layout_marginStart="178dp"
         android:layout_marginTop="36dp"
         android:layout_marginEnd="175dp"
-        android:text="Total de compra:"
+        android:text="Total de la compra:"
         android:textColor="@color/white"
         android:textSize="20sp"
         android:textStyle="bold"

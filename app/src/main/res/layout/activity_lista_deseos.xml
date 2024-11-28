@@ -29,6 +29,7 @@
             android:translationY="40dp" />
 
         <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvElementos"
             android:layout_width="match_parent"
             android:layout_height="410dp"
             android:background="@color/material_dynamic_neutral60"
