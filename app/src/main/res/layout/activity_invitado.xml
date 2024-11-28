@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    tools:context=".InvitadoActivity">
+
+    <TextView
+        android:id="@+id/txtGaleria"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/gallery_guest"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
+        android:id="@+id/svGallery"
+        android:layout_width="409dp"
+        android:layout_height="672dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="1dp"
+        android:background="#A29F9F"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtGaleria"
+        tools:ignore="SpeakableTextPresentCheck">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txtCasual"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ropa Casual"
+                android:textColor="@color/design_default_color_error"
+                android:textSize="20sp"
+                android:textStyle="bold|italic"
+                android:translationX="150dp" />
+
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="match_parent"
+                android:layout_height="190dp"
+                android:background="@color/white"
+                app:srcCompat="@drawable/casual2" />
+
+            <TextView
+                android:id="@+id/txtFormal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ropa Formal"
+                android:textColor="@color/design_default_color_error"
+                android:textSize="20sp"
+                android:textStyle="bold|italic"
+                android:translationX="150dp"
+                android:translationY="5dp" />
+
+            <ImageView
+                android:id="@+id/imageView4"
+                android:layout_width="match_parent"
+                android:layout_height="190dp"
+                android:background="@color/white"
+                android:translationY="7dp"
+                app:srcCompat="@drawable/formal1" />
+
+            <TextView
+                android:id="@+id/txtDeportiva"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ropa Deportiva"
+                android:textColor="@color/design_default_color_error"
+                android:textSize="20sp"
+                android:textStyle="bold|italic"
+                android:translationX="140dp"
+                android:translationY="5dp" />
+
+            <ImageView
+                android:id="@+id/imageView5"
+                android:layout_width="match_parent"
+                android:layout_height="190dp"
+                android:background="@color/white"
+                android:translationY="5dp"
+                app:srcCompat="@drawable/deportiva1" />
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

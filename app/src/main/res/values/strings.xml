@@ -17,7 +17,23 @@
     <string name="tallaMediana">Talla Mediana</string>
     <string name="TallaGrande">Talla Grande</string>
     <string name="telefono">Telelfono</string>
-    <string name="activity_menu">Consulta de Producto</string>
+    <!--Activity Detalle del Producto -->
+    <string name="activity_menu">Detalle del Producto</string>
     <string name="back">Regresar</string>
     <string name="info" tools:ignore="TypographyEllipsis">Información...</string>
+    <!--Activity Lista de deseos y CardView -->
+    <string name="lista_deseos">Lista de Deseos</string>
+    <string name="agregar_carrito">Agregar al Carrito</string>
+    <string name="eliminar_lista_deseos">Elimininar de lista</string>
+    <string name="marca_wish">Marca</string>
+    <string name="modelo_wish">Modelo</string>
+    <string name="precio_wish">Precio</string>
+    <!--Activity Galería (Invitado) -->
+    <string name="gallery_guest">Galería de productos</string>
+    <string name="casual">Ropa Casual</string>
+    <string name="formal">Ropa Deportiva</string>
+    <string name="deportiva">Ropa Deportiva</string>
+    <!--Carrito de Compras-->
+    <string name="carrito">Carrito de Compras</string>
+    <string name="info_de_carrito" tools:ignore="TypographyEllipsis">Información del carrito...</string>
 </resources>
