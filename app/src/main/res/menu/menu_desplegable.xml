@@ -17,12 +17,12 @@
         android:id="@+id/itemFormal"
         android:title="Ropa formal" />
     <item
-        android:id="@+id/itemSalir"
-        android:title="Salir" />
-    <item
         android:id="@+id/itemLDeseos"
         android:title="Lista de deseos" />
     <item
         android:id="@+id/itemComentarios"
         android:title="Comentarios" />
+    <item
+        android:id="@+id/itemSalir"
+        android:title="Salir" />
 </menu>
