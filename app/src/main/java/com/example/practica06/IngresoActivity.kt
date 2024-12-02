@@ -8,54 +8,66 @@ import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Spinner
+import android.widget.Switch
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 
 class IngresoActivity : AppCompatActivity() {
-    private lateinit var usuario: Spinner
-    private lateinit var edtContrasena: EditText
-    private lateinit var btnIngresar: Button
-    private lateinit var btnLimpiar: Button
+    private lateinit var usuario: EditText
+    private lateinit var contrasena: EditText
+    private lateinit var ingresar: Button
+    private lateinit var limpiar: Button
+    private lateinit var invitado: Button
+    private lateinit var registrarse: Button
+    private lateinit var guardarse: Switch
 
-    @SuppressLint("MissingInflatedId")
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_ingreso)
 
-        edtContrasena = findViewById(R.id.edtContrasena)
-        btnIngresar = findViewById(R.id.btnIngresar)
-        btnLimpiar = findViewById(R.id.btnLimpiar)
+        usuario = findViewById(R.id.edtUsuario)
+        contrasena = findViewById(R.id.edtContrasena)
+        ingresar = findViewById(R.id.btnIngresar)
+        limpiar = findViewById(R.id.btnLimpiar)
+        invitado = findViewById(R.id.btnInvitado)
+        registrarse = findViewById(R.id.btnRegistrarse)
+        guardarse = findViewById(R.id.swGuardado)
 
 
-        val usuarios = listOf("Alex", "Juan", "Fernando")
-        val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, usuarios)
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-        usuario.adapter = adapter
-
-        btnIngresar.setOnClickListener {
+        ingresar.setOnClickListener {
             ingresar()
         }
 
-        btnLimpiar.setOnClickListener {
+        limpiar.setOnClickListener {
             limpiar()
         }
+        invitado.setOnClickListener {
+            val intent = Intent(this, InvitadoActivity::class.java)
+            startActivity(intent)
+        }
+        registrarse.setOnClickListener {
+            val intent = Intent(this, RegistroActivity::class.java)
+            startActivity(intent)
+        }
+
     }
 
     private fun ingresar() {
-        val contrasena = edtContrasena.text.toString()
-        if (contrasena == "12345") {
-            // Redirigir a la siguiente Activity de Menú
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
-        } else {
-            // Mostrar un Toast si la contraseña es incorrecta
-            Toast.makeText(this, "Usuario o contraseña incorrectos", Toast.LENGTH_SHORT).show()
-        }
+      if (usuario.text.toString().isEmpty() and usuario.text.toString().isNotBlank() and
+          contrasena.text.toString().isEmpty() and contrasena.text.toString().isNotBlank()) {
+
+          val intent = Intent(this, MainActivity::class.java)
+          startActivity(intent)
+      }else
+          Toast.makeText(this, "Usuario y/o contraseña incorrectos", Toast.LENGTH_SHORT).show()
     }
 
     private fun limpiar() {
-        // Borrar el contenido de la contraseña
-        edtContrasena.text.clear()
-        edtContrasena.requestFocus()
+        usuario.text.clear()
+        usuario.requestFocus()
+        contrasena.text.clear()
+        contrasena.requestFocus()
+        guardarse.isChecked = false
     }
 }
