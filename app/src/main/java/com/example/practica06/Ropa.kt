@@ -1,7 +1,7 @@
 package com.example.practica06
 
 class Ropa (
-    //Atributos de clase
+    //Atributos de clase Ropa
     var nombre: String = "none",
     var marca: String = "none",
     var modelo: String = "none",
