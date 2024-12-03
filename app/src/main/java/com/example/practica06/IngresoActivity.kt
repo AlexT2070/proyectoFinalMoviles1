@@ -2,6 +2,7 @@ package com.example.practica06
 
 import android.annotation.SuppressLint
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.View
 import android.widget.ArrayAdapter
@@ -35,6 +36,8 @@ class IngresoActivity : AppCompatActivity() {
         guardarse = findViewById(R.id.swGuardado)
 
 
+
+
         ingresar.setOnClickListener {
             ingresar()
         }
@@ -54,8 +57,12 @@ class IngresoActivity : AppCompatActivity() {
     }
 
     private fun ingresar() {
-      if (usuario.text.toString().isEmpty() and usuario.text.toString().isNotBlank() and
-          contrasena.text.toString().isEmpty() and contrasena.text.toString().isNotBlank()) {
+      if (usuario.text.toString().isEmpty() && usuario.text.toString().isNotBlank() &&
+          contrasena.text.toString().isEmpty() && contrasena.text.toString().isNotBlank()) {
+          val usr= Usuario(usuario.text.toString(), contrasena.text.toString(), guardarse = false)
+          if(guardarse.isChecked){
+              guardarPreferencias(usr)
+          }
 
           val intent = Intent(this, MainActivity::class.java)
           startActivity(intent)
@@ -63,6 +70,14 @@ class IngresoActivity : AppCompatActivity() {
           Toast.makeText(this, "Usuario y/o contraseña incorrectos", Toast.LENGTH_SHORT).show()
     }
 
+    fun guardarPreferencias(usr: Usuario) {
+        val preferences = getSharedPreferences("preferenciasUsuario", MODE_PRIVATE)
+        val editor: SharedPreferences.Editor = preferences.edit()
+        editor.putString("usuario", usr.usuario)
+        editor.putString("contrasena", usr.contrasena)
+        editor.putBoolean("guardados", usr.guardarse)
+        editor.apply()
+    }
     private fun limpiar() {
         usuario.text.clear()
         usuario.requestFocus()
