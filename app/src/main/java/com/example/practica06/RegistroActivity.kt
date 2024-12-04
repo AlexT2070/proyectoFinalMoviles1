@@ -49,8 +49,12 @@ class RegistroActivity : AppCompatActivity() {
             }
         }
 
-        if(notificacion.isChecked){
-            Toast.makeText(this, "Notificaciones activadas", Toast.LENGTH_SHORT).show()
+        notificacion.setOnClickListener{
+            if (notificacion.isChecked) {
+                Toast.makeText(this, "Notificaciones activadas", Toast.LENGTH_SHORT).show()
+            } else {
+                Toast.makeText(this, "Notificaciones desactivadas", Toast.LENGTH_SHORT).show()
+            }
         }
 
         limpiar.setOnClickListener {
