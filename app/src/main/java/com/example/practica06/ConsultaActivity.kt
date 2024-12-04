@@ -8,6 +8,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 
+//Clase que va a recibir los datos del Activity Invitado y los va a mostrar
 class ConsultaActivity : AppCompatActivity() {
 
     @SuppressLint("MissingInflatedId", "SetTextI18n")
