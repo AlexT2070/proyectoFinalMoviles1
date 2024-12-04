@@ -3,18 +3,25 @@ package com.example.practica06
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.example.practica06.adaptador.RopaAdaptador
 
 class ListaDeseosActivity : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_lista_deseos)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
-        }
+        //Inicializar el RecyclerView
+        inicializarRecycler()
     }
+
+    private fun inicializarRecycler() {
+        //Variable para acceder al componente Recycler
+        val recycler = findViewById<RecyclerView>(R.id.rvElementos)
+        //Administrador del componente
+        recycler.layoutManager = LinearLayoutManager(this)
+        //Establecer en el adaptador la lista de productos
+        //recycler.adapter = RopaAdaptador(ListadoRopa.listadoRopaCas)
+    }//inicializarRecycler
 }

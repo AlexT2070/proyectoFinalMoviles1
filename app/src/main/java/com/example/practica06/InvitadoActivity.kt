@@ -194,7 +194,7 @@ class InvitadoActivity : AppCompatActivity() {
         //Ropa Deportiva
         imgDeportiva1.setOnClickListener {
             //Atributos actualizados
-            nombreRop = "Sudadera para Hombre "
+            nombreRop = "Sudadera para Hombre"
             marcaRop = "Puma"
             modeloRop = "Con capucha y bicolor: blanco/negro"
             precioRop = 500.00
