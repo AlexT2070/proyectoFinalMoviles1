@@ -1,14 +1,10 @@
 package com.example.practica06
 
-import android.annotation.SuppressLint
 import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
-import android.view.View
-import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.EditText
-import android.widget.Spinner
 import android.widget.Switch
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -21,7 +17,7 @@ class IngresoActivity : AppCompatActivity() {
     private lateinit var invitado: Button
     private lateinit var registrarse: Button
     private lateinit var guardarse: Switch
-
+    private lateinit var preferences: SharedPreferences
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,54 +31,52 @@ class IngresoActivity : AppCompatActivity() {
         registrarse = findViewById(R.id.btnRegistrarse)
         guardarse = findViewById(R.id.swGuardado)
 
-
-
+        preferences = getSharedPreferences("preferenciasUsuario", MODE_PRIVATE)
 
         ingresar.setOnClickListener {
             ingresar()
         }
 
         limpiar.setOnClickListener {
-            limpiar()
+            limpiarCampos()
         }
+
         invitado.setOnClickListener {
             val intent = Intent(this, InvitadoActivity::class.java)
             startActivity(intent)
         }
+
         registrarse.setOnClickListener {
             val intent = Intent(this, RegistroActivity::class.java)
             startActivity(intent)
         }
-
     }
 
     private fun ingresar() {
-      if (usuario.text.toString().isEmpty() && usuario.text.toString().isNotBlank() &&
-          contrasena.text.toString().isEmpty() && contrasena.text.toString().isNotBlank()) {
-          val usr= Usuario(usuario.text.toString(), contrasena.text.toString(), guardarse = false)
-          if(guardarse.isChecked){
-              guardarPreferencias(usr)
-          }
+        val usuarioIngresado = usuario.text.toString()
+        val contrasenaIngresada = contrasena.text.toString()
 
-          val intent = Intent(this, MainActivity::class.java)
-          startActivity(intent)
-      }else
-          Toast.makeText(this, "Usuario y/o contraseña incorrectos", Toast.LENGTH_SHORT).show()
+        if (usuarioIngresado == "admin" && contrasenaIngresada == "12345") {
+            val intent = Intent(this, MainActivity::class.java)
+            intent.putExtra("isAdmin", true) // Usuario es administrador
+            startActivity(intent)
+        } else if (esUsuarioValido(usuarioIngresado, contrasenaIngresada)) {
+            val intent = Intent(this, MainActivity::class.java)
+            intent.putExtra("isAdmin", false) // Usuario normal
+            startActivity(intent)
+        } else {
+            Toast.makeText(this, "Usuario o contraseña incorrectos", Toast.LENGTH_SHORT).show()
+        }
     }
 
-    fun guardarPreferencias(usr: Usuario) {
-        val preferences = getSharedPreferences("preferenciasUsuario", MODE_PRIVATE)
-        val editor: SharedPreferences.Editor = preferences.edit()
-        editor.putString("usuario", usr.usuario)
-        editor.putString("contrasena", usr.contrasena)
-        editor.putBoolean("guardados", usr.guardarse)
-        editor.apply()
+    private fun esUsuarioValido(usuario: String, contrasena: String): Boolean {
+        // Aquí verifica la validez del usuario registrado
+        return true
     }
-    private fun limpiar() {
+
+    private fun limpiarCampos() {
         usuario.text.clear()
-        usuario.requestFocus()
         contrasena.text.clear()
-        contrasena.requestFocus()
         guardarse.isChecked = false
     }
 }

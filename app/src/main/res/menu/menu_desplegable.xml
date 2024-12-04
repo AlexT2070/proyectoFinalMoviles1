@@ -3,26 +3,27 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/itemDeportiva"
-        android:title="Ropa deportiva" />
+        android:id="@+id/itemProductos"
+        android:title="Productos" />
     <item
         android:id="@+id/itemCarrito"
         android:icon="@drawable/baseline_shopping_cart_24"
         android:title="Carrito"
         app:showAsAction="ifRoom" />
     <item
-        android:id="@+id/itemCasual"
-        android:title="Ropa casual" />
-    <item
-        android:id="@+id/itemFormal"
-        android:title="Ropa formal" />
-    <item
         android:id="@+id/itemLDeseos"
         android:title="Lista de deseos" />
+    <item
+        android:id="@+id/itemConsultar"
+        android:title="Consultar productos" />
     <item
         android:id="@+id/itemComentarios"
         android:title="Comentarios" />
     <item
         android:id="@+id/itemSalir"
         android:title="Salir" />
+    <item
+        android:id="@+id/itemAdmin"
+        android:title="Administrar Productos"
+         />
 </menu>

@@ -10,7 +10,7 @@
     tools:context=".RegistroActivity">
 
     <EditText
-        android:id="@+id/edtDomicilio"
+        android:id="@+id/edtContrasena"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="42dp"
@@ -20,7 +20,7 @@
         android:inputType="text"
         android:minHeight="50dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edtNombre" />
+        app:layout_constraintTop_toBottomOf="@+id/edtUsuario" />
 
     <TextView
         android:id="@+id/txtTitulo"
@@ -35,7 +35,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/edtNombre"
+        android:id="@+id/edtUsuario"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="68dp"
@@ -57,7 +57,7 @@
         android:inputType="text"
         android:minHeight="50dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edtDomicilio" />
+        app:layout_constraintTop_toBottomOf="@+id/edtContrasena" />
 
     <EditText
         android:id="@+id/edtnumero"

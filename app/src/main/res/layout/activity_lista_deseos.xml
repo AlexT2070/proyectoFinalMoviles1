@@ -33,7 +33,7 @@
             android:layout_width="match_parent"
             android:layout_height="410dp"
             android:background="@color/material_dynamic_neutral60"
-            android:backgroundTint="@color/white"
+            android:backgroundTint="@color/material_dynamic_neutral60"
             android:translationY="60dp"
             tools:itemCount="20" />
 

@@ -1,6 +1,5 @@
 package com.example.practica06
 
-import Paciente
 import android.annotation.SuppressLint
 import android.os.Bundle
 import android.widget.Button

@@ -1,97 +1,79 @@
 package com.example.practica06
 
-import Paciente
-import android.annotation.SuppressLint
-import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
-import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.EditText
-import android.widget.ListView
 import android.widget.Switch
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 
 class RegistroActivity : AppCompatActivity() {
-    private lateinit var Nombre: EditText
-    private lateinit var Contrasena: EditText
-    private lateinit var Correo: EditText
-    private lateinit var Telefono: EditText
-    @SuppressLint("UseSwitchCompatOrMaterialCode")
-    private lateinit var notificaciones: Switch
+    private lateinit var usuario: EditText
+    private lateinit var contrasena: EditText
+    private lateinit var correo: EditText
+    private lateinit var numero: EditText
+    private lateinit var registrar: Button
+    private lateinit var limpiar: Button
+    private lateinit var regresar: Button
+    private lateinit var notificacion: Switch
+    private lateinit var preferences: SharedPreferences
 
-    private val pacientes = mutableListOf<Paciente>()
-
-    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_registro)
 
-        Nombre = findViewById(R.id.edtNombre)
-        Contrasena = findViewById(R.id.edtPassword)
-        Correo = findViewById(R.id.edtCorreo)
-        Telefono = findViewById(R.id.edtNumeroTel)
-        notificaciones = findViewById(R.id.swNotificaciones)
+        usuario = findViewById(R.id.edtUsuario)
+        contrasena = findViewById(R.id.edtContrasena)
+        correo = findViewById(R.id.edtCorreo)
+        numero = findViewById(R.id.edtnumero)
+        registrar = findViewById(R.id.btnRegistrar)
+        limpiar = findViewById(R.id.btnLimpiar)
+        regresar = findViewById(R.id.btnRegresar)
+        notificacion = findViewById(R.id.swt1)
 
-        val btnRegistrar = findViewById<Button>(R.id.btnRegistrar)
-        val btnLimpiar = findViewById<Button>(R.id.btnLimpiar)
-        val btnRegresar = findViewById<Button>(R.id.btnRegresar)
+        preferences = getSharedPreferences("preferenciasUsuario", MODE_PRIVATE)
 
-        // Datos para el ListView de correos
-        val correos = arrayOf("alex22@gmail.com", "juan22@gmail.com", "fernando22@gmail.com")
-        val adapterCorreos = ArrayAdapter(this, android.R.layout.simple_list_item_single_choice, correos)
-        correo.adapter = adapterCorreos
-        correo.choiceMode = ListView.CHOICE_MODE_SINGLE
+        registrar.setOnClickListener {
+            val nombreUsuario = usuario.text.toString()
+            val contrasenaUsuario = contrasena.text.toString()
+            val correoUsuario = correo.text.toString()
+            val numeroUsuario = numero.text.toString()
 
-        btnRegistrar.setOnClickListener {
-            val nombre = edtNombre.text.toString()
-            val domicilio = edtDomicilio.text.toString()
-            val correoSeleccionadoIndex = correo.checkedItemPosition
-
-            // Validaciones
-            if (nombre.isEmpty() || domicilio.isEmpty() || correoSeleccionadoIndex == ListView.INVALID_POSITION) {
-                Toast.makeText(this, "Por favor, completa todos los campos.", Toast.LENGTH_SHORT).show()
-                return@setOnClickListener
+            if (nombreUsuario.isNotEmpty() && contrasenaUsuario.isNotEmpty() && correoUsuario.isNotEmpty() && numeroUsuario.isNotEmpty()) {
+                guardarUsuario(nombreUsuario, contrasenaUsuario)
+                Toast.makeText(this, "Registro exitoso", Toast.LENGTH_SHORT).show()
+                finish() // Regresa a la pantalla de Login
+            } else {
+                Toast.makeText(this, "Por favor, completa todos los campos", Toast.LENGTH_SHORT).show()
             }
-
-            // Obtener el correo seleccionado
-            val correoSeleccionado = correos[correoSeleccionadoIndex]
-
-            // Obtener los teléfonos seleccionados
-            val telefono1 = if (telefonos1.isChecked) "123456789" else null
-            val telefono2 = if (telefonos2.isChecked) "987654321" else null
-            val telefono3 = if (telefonos3.isChecked) "555555555" else null
-
-            // Crear y agregar paciente al arreglo
-            val paciente = Paciente(nombre, domicilio, correoSeleccionado, telefono = telefono1 ?: telefono2 ?: telefono3 ?: "Sin teléfono")
-            pacientes.add(paciente)
-
-            Toast.makeText(this, "Registro exitoso", Toast.LENGTH_SHORT).show()
-
-            // Limpiar campos
-            limpiarCampos()
-
-            // Ir a ConsultaActivity y pasar el arreglo de pacientes
-            val intent = Intent(this, ConsultaActivity::class.java)
-            intent.putExtra("pacientes", ArrayList(pacientes))
-            startActivity(intent)
         }
 
-        btnLimpiar.setOnClickListener {
+        if(notificacion.isChecked){
+            Toast.makeText(this, "Notificaciones activadas", Toast.LENGTH_SHORT).show()
+        }
+
+        limpiar.setOnClickListener {
             limpiarCampos()
         }
 
-        btnRegresar.setOnClickListener {
-            finish() // Regresa a la actividad anterior
+        regresar.setOnClickListener {
+            finish()
         }
     }
 
+    private fun guardarUsuario(usuario: String, contrasena: String) {
+        val editor = preferences.edit()
+        editor.putString("usuario", usuario)
+        editor.putString("contrasena", contrasena)
+        editor.apply()
+    }
+
     private fun limpiarCampos() {
-        edtNombre.text.clear()
-        edtDomicilio.text.clear()
-        correo.clearChoices()
-        telefonos1.isChecked = false
-        telefonos2.isChecked = false
-        telefonos3.isChecked = false
+        usuario.text.clear()
+        contrasena.text.clear()
+        correo.text.clear()
+        numero.text.clear()
+        notificacion.isChecked = false
     }
 }
