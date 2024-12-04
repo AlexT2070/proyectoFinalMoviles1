@@ -156,6 +156,14 @@
                 android:layout_height="212dp"
                 android:background="@color/white"
                 app:srcCompat="@drawable/deportiva04" />
+
+            <Button
+                android:id="@+id/btnReturn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Regresar al Login"
+                android:translationY="3dp" />
         </LinearLayout>
     </ScrollView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

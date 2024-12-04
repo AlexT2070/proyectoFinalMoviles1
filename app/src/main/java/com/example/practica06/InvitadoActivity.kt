@@ -3,6 +3,7 @@ package com.example.practica06
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.ScrollView
 import android.widget.Toast
@@ -11,6 +12,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
+@Suppress("NAME_SHADOWING")
 class InvitadoActivity : AppCompatActivity() {
     //Instancias a componentes gráficos
     private lateinit var imgCasual1: ImageView
@@ -28,6 +30,8 @@ class InvitadoActivity : AppCompatActivity() {
     private lateinit var imgDeportiva3: ImageView
     private lateinit var imgDeportiva4: ImageView
 
+    //Botón de regreso al Login
+    private lateinit var btnRLogin: Button
 
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -54,6 +58,8 @@ class InvitadoActivity : AppCompatActivity() {
         imgDeportiva2 = findViewById(R.id.imgDep2)
         imgDeportiva3 = findViewById(R.id.imgDep3)
         imgDeportiva4 = findViewById(R.id.imgDep4)
+
+        btnRLogin = findViewById(R.id.btnReturn)
 
         //Atributos a ver a detalle de cada imagen
         var nombreRop: String = "Camisa vaquera de bolsillo para hombre"
@@ -254,6 +260,11 @@ class InvitadoActivity : AppCompatActivity() {
             intent.putExtra("modelo", modeloRop)
             intent.putExtra("precio", precioRop)
             intent.putExtra("numRopa", 12)
+            startActivity(intent)
+        }
+        //Evento del botón de regreso al primer Activity
+        btnRLogin.setOnClickListener {
+            val intent = Intent(applicationContext, IngresoActivity::class.java)
             startActivity(intent)
         }
 
