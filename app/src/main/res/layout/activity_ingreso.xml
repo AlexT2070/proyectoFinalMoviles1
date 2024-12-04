@@ -52,7 +52,7 @@
         android:background="@color/material_dynamic_neutral60"
         android:ems="10"
         android:hint="Contraseña"
-        android:inputType="text|textPassword"
+        android:inputType="textPassword"
         android:minHeight="50dp"
         android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="parent"

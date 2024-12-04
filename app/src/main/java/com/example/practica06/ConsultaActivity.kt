@@ -23,7 +23,7 @@ class ConsultaActivity : AppCompatActivity() {
 
 
         // Recibir la información del activity anterior (invitado)
-       val infoRecibida = intent.extras
+        val infoRecibida = intent.extras
 
         //Variables que van a recibir los datos
         val nombreRec: String?
