@@ -50,11 +50,32 @@
                 android:translationX="150dp" />
 
             <ImageView
-                android:id="@+id/imageView3"
+                android:id="@+id/imgCas1"
                 android:layout_width="match_parent"
-                android:layout_height="190dp"
+                android:layout_height="212dp"
                 android:background="@color/white"
-                app:srcCompat="@drawable/casual2" />
+                app:srcCompat="@drawable/casual01" />
+
+            <ImageView
+                android:id="@+id/imgCas2"
+                android:layout_width="match_parent"
+                android:layout_height="212dp"
+                android:background="@color/white"
+                app:srcCompat="@drawable/casual02" />
+
+            <ImageView
+                android:id="@+id/imgCas3"
+                android:layout_width="match_parent"
+                android:layout_height="212dp"
+                android:background="@color/white"
+                app:srcCompat="@drawable/casual03" />
+
+            <ImageView
+                android:id="@+id/imgCas4"
+                android:layout_width="match_parent"
+                android:layout_height="212dp"
+                android:background="@color/white"
+                app:srcCompat="@drawable/casual04" />
 
             <TextView
                 android:id="@+id/txtFormal"
@@ -68,12 +89,33 @@
                 android:translationY="5dp" />
 
             <ImageView
-                android:id="@+id/imageView4"
+                android:id="@+id/imgFor1"
                 android:layout_width="match_parent"
                 android:layout_height="190dp"
                 android:background="@color/white"
                 android:translationY="7dp"
-                app:srcCompat="@drawable/formal1" />
+                app:srcCompat="@drawable/formal01" />
+
+            <ImageView
+                android:id="@+id/imgFor2"
+                android:layout_width="match_parent"
+                android:layout_height="212dp"
+                android:background="@color/white"
+                app:srcCompat="@drawable/formal02" />
+
+            <ImageView
+                android:id="@+id/imgFor3"
+                android:layout_width="match_parent"
+                android:layout_height="212dp"
+                android:background="@color/white"
+                app:srcCompat="@drawable/formal03" />
+
+            <ImageView
+                android:id="@+id/imgFor4"
+                android:layout_width="match_parent"
+                android:layout_height="212dp"
+                android:background="@color/white"
+                app:srcCompat="@drawable/formal04" />
 
             <TextView
                 android:id="@+id/txtDeportiva"
@@ -87,12 +129,33 @@
                 android:translationY="5dp" />
 
             <ImageView
-                android:id="@+id/imageView5"
+                android:id="@+id/imgDep1"
                 android:layout_width="match_parent"
                 android:layout_height="190dp"
                 android:background="@color/white"
                 android:translationY="5dp"
-                app:srcCompat="@drawable/deportiva1" />
+                app:srcCompat="@drawable/deportiva01" />
+
+            <ImageView
+                android:id="@+id/imgDep2"
+                android:layout_width="match_parent"
+                android:layout_height="212dp"
+                android:background="@color/white"
+                app:srcCompat="@drawable/deportiva02" />
+
+            <ImageView
+                android:id="@+id/imgDep3"
+                android:layout_width="match_parent"
+                android:layout_height="212dp"
+                android:background="@color/white"
+                app:srcCompat="@drawable/deportiva03" />
+
+            <ImageView
+                android:id="@+id/imgDep4"
+                android:layout_width="match_parent"
+                android:layout_height="212dp"
+                android:background="@color/white"
+                app:srcCompat="@drawable/deportiva04" />
         </LinearLayout>
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
