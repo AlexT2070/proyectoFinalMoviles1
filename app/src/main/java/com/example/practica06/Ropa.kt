@@ -7,13 +7,14 @@ data class Ropa (
     var modelo: String = "none",
     var precio: Double = 0.0,
     var cantidad: Int = 0,
-    var descripcion: String = ""
+    var descripcion: String = "",
+    val imagen: Int
 ){
-    // Method para calcular el total de la compra
+    // Method to calcule Total Purchase
     fun calcularTotal(): Double {
         return precio * cantidad
     }
-    //Validación de un atributo
+    //Validation of an attribute
     init {
         require(precio >= 0){"El precio no puede ser negativo"}
         require(cantidad >= 0){"La cantidad no puede ser negativa"}
