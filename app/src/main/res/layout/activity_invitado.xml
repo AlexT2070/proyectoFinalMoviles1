@@ -161,7 +161,7 @@
                 android:id="@+id/btnReturn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Regresar al Login"
+                android:text="Regreso al Login"
                 android:translationY="3dp" />
         </LinearLayout>
     </ScrollView>

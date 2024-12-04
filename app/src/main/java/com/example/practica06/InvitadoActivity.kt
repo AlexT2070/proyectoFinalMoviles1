@@ -30,7 +30,7 @@ class InvitadoActivity : AppCompatActivity() {
     private lateinit var imgDeportiva3: ImageView
     private lateinit var imgDeportiva4: ImageView
 
-    //Botón de regreso al Login
+    //Botón de regreso al activity del login
     private lateinit var btnRLogin: Button
 
     @SuppressLint("MissingInflatedId")
