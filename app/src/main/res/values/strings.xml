@@ -18,5 +18,5 @@
     <string name="TallaGrande">Talla Grande</string>
     <string name="telefono">Telelfono</string>
     <string name="activity_menu">activity_menu</string>
-
+    <string name="login">Regresar al Login</string>
 </resources>
