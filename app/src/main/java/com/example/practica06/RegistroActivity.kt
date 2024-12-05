@@ -49,7 +49,7 @@ class RegistroActivity : AppCompatActivity() {
             }
         }
 
-        notificacion.setOnClickListener{
+        notificacion.setOnClickListener {
             if (notificacion.isChecked) {
                 Toast.makeText(this, "Notificaciones activadas", Toast.LENGTH_SHORT).show()
             } else {
@@ -68,8 +68,8 @@ class RegistroActivity : AppCompatActivity() {
 
     private fun guardarUsuario(usuario: String, contrasena: String) {
         val editor = preferences.edit()
-        editor.putString("usuario", usuario)
-        editor.putString("contrasena", contrasena)
+        editor.putString("usuario_$usuario", usuario) // Clave específica por usuario
+        editor.putString("contrasena_$usuario", contrasena)
         editor.apply()
     }
 

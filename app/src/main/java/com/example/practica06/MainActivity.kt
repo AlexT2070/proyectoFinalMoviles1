@@ -47,11 +47,6 @@ class MainActivity : AppCompatActivity() {
             R.id.itemLDeseos -> startActivity(Intent(this, ListaDeseosActivity::class.java))
             R.id.itemComentarios -> startActivity(Intent(this, Comentarios::class.java))
             R.id.itemCarrito -> startActivity(Intent(this, CarritoActivity::class.java))
-            R.id.itemConsultar -> {
-                val intent = Intent(this, ConsultaActivity::class.java)
-                intent.putExtra("Ropa", ropa)
-                startActivity(intent)
-            }
 
             R.id.itemAdmin -> {
                 if (isAdmin) {
