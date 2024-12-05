@@ -15,7 +15,7 @@
         android:layout_marginStart="84dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="85dp"
-        android:text="Tipo de ropa"
+        android:text="Ropa Casual"
         android:textAlignment="center"
         android:textColor="@color/white"
         android:textSize="20sp"
@@ -66,6 +66,7 @@
         android:hint="Precio"
         android:inputType="text"
         android:minHeight="48dp"
+        android:textColor="@color/white"
         android:textColorHint="#FF0000"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -82,61 +83,36 @@
         android:hint="Modelo"
         android:inputType="text"
         android:minHeight="48dp"
+        android:textColor="@color/white"
         android:textColorHint="#FF0000"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edtPrecio" />
-
-    <Spinner
-        android:id="@+id/spinCategoria"
-        android:layout_width="286dp"
-        android:layout_height="57dp"
-        android:layout_marginStart="62dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="63dp"
-        android:background="@color/material_dynamic_neutral60"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
     <Button
         android:id="@+id/btnBorrar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="96dp"
-        android:layout_marginTop="22dp"
+        android:layout_marginTop="104dp"
         android:layout_marginEnd="70dp"
         android:backgroundTint="@color/design_default_color_error"
         android:text="Borrar"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/btnActualizar"
-        app:layout_constraintTop_toBottomOf="@+id/spinCategoria" />
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="175dp"
-        android:layout_marginTop="3dp"
-        android:layout_marginEnd="175dp"
-        android:text="Categoria"
-        android:textAlignment="textStart"
-        android:textColor="@color/white"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edtMarca"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintTop_toBottomOf="@+id/edtMarca" />
 
     <Button
         android:id="@+id/btnActualizar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="22dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="104dp"
         android:backgroundTint="@color/design_default_color_error"
         android:text="Actualizar"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinCategoria" />
+        app:layout_constraintTop_toBottomOf="@+id/edtMarca" />
 
     <TextView
         android:id="@+id/textView4"
@@ -154,14 +130,16 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="103dp"
-        android:layout_marginTop="21dp"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="98dp"
         android:ems="10"
         android:hint="Marca"
         android:inputType="text"
         android:minHeight="48dp"
+        android:textColor="@color/white"
         android:textColorHint="#FF0000"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edtModelo" />
 </androidx.constraintlayout.widget.ConstraintLayout>
