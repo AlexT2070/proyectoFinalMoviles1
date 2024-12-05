@@ -40,7 +40,7 @@ class Editar_Borrar : AppCompatActivity() {
         preci = findViewById(R.id.edtPrecio)
         Modelo = findViewById(R.id.edtModelo)
         marca = findViewById(R.id.edtMarca)
-        categoria = findViewById(R.id.spinCategoria)
+
 
 
 
