@@ -22,6 +22,6 @@ class ListaDeseosActivity : AppCompatActivity() {
         //Administrador del componente
         recycler.layoutManager = LinearLayoutManager(this)
         //Establecer en el adaptador la lista de productos
-        //recycler.adapter = RopaAdaptador(ListadoRopa.listadoRopaCas)
+        recycler.adapter = RopaAdaptador(ListadoRopa.listadoRopaCas)
     }//inicializarRecycler
 }
