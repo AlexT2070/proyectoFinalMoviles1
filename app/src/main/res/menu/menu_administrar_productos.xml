@@ -10,7 +10,4 @@
     <item
         android:id="@+id/itmRopaDep"
         android:title="Ropa Deportiva" />
-    <item
-        android:id="@+id/itmExit"
-        android:title="Salir" />
 </menu>
