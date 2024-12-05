@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/itmRopaCas"
+        android:title="Ropa Casual" />
+    <item
+        android:id="@+id/itmRopaForm"
+        android:title="Ropa Formal" />
+    <item
+        android:id="@+id/itmRopaDep"
+        android:title="Ropa Deportiva" />
+    <item
+        android:id="@+id/itmExit"
+        android:title="Salir" />
+</menu>
