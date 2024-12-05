@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000"
+    tools:context=".Editar_Borrar_Formal">
+
+    <Button
+        android:id="@+id/btnBorrar2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="67dp"
+        android:layout_marginTop="36dp"
+        android:backgroundTint="@color/design_default_color_error"
+        android:text="Borrar"
+        app:layout_constraintStart_toEndOf="@+id/btnActualizar2"
+        app:layout_constraintTop_toBottomOf="@+id/editmarca2" />
+
+    <Button
+        android:id="@+id/btnActualizar2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="72dp"
+        android:layout_marginTop="36dp"
+        android:backgroundTint="@color/design_default_color_error"
+        android:text="Actualizar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editmarca2" />
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/tolbarcategoria2"
+        android:layout_width="409dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="1dp"
+        android:background="@color/material_dynamic_neutral60"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="268dp"
+        android:layout_height="58dp"
+        android:layout_marginStart="72dp"
+        android:layout_marginTop="8dp"
+        android:text="Ropa Formal"
+        android:textAlignment="center"
+        android:textColor="#F6F6F6"
+        android:textSize="34sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tolbarcategoria2" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="103dp"
+        android:text="Productos Registrados"
+        android:textAlignment="center"
+        android:textColor="#FDFDFD"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+    <Spinner
+        android:id="@+id/Spinropa2"
+        android:layout_width="314dp"
+        android:layout_height="53dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="28dp"
+        android:background="@color/material_dynamic_neutral60"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+    <EditText
+        android:id="@+id/edtinombre2"
+        android:layout_width="221dp"
+        android:layout_height="65dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="24dp"
+        android:ems="10"
+        android:hint="Nombre"
+        android:inputType="text"
+        android:textColor="#FFFFFF"
+        android:textColorHint="@color/design_default_color_error"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Spinropa2" />
+
+    <EditText
+        android:id="@+id/editprecio2"
+        android:layout_width="223dp"
+        android:layout_height="53dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="36dp"
+        android:ems="10"
+        android:hint="Precio"
+        android:inputType="text"
+        android:textColor="#FFFFFF"
+        android:textColorHint="@color/design_default_color_error"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edtinombre2" />
+
+    <EditText
+        android:id="@+id/editmodelo2"
+        android:layout_width="219dp"
+        android:layout_height="65dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="28dp"
+        android:ems="10"
+        android:hint="Modelo"
+        android:inputType="text"
+        android:textColor="#FFFFFF"
+        android:textColorHint="@color/design_default_color_error"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editprecio2" />
+
+    <EditText
+        android:id="@+id/editmarca2"
+        android:layout_width="224dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="48dp"
+        android:ems="10"
+        android:hint="Marca"
+        android:inputType="text"
+        android:textColor="#FFFFFF"
+        android:textColorHint="@color/design_default_color_error"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editmodelo2" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

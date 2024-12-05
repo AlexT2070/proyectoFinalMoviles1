@@ -14,52 +14,40 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.example.practica06.ListadoRopa
 import com.example.practica06.R.menu.menu_administrar_productos
 
-class Editar_Borrar : AppCompatActivity() {
-    //Instancias a componentes gráficos
+class Editar_Borrar_Formal : AppCompatActivity() {
     private lateinit var Borrar: Button
     private lateinit var Spin: Spinner
-    private lateinit var edit:Button
-    private lateinit var Nombre:EditText
-    private lateinit var preci:EditText
-    private lateinit var Modelo:EditText
-    private lateinit var marca:EditText
-
+    private lateinit var edit: Button
+    private lateinit var Nombre: EditText
+    private lateinit var preci: EditText
+    private lateinit var Modelo: EditText
+    private lateinit var marca: EditText
 
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_editar_borrar)
+        setContentView(R.layout.activity_editar_borrar_formal)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-        //Asociación
-        edit = findViewById(R.id.btnActualizar)
-        Borrar = findViewById(R.id.btnBorrar)
-        Spin = findViewById(R.id.spinRopa)
-        Nombre = findViewById(R.id.edtNombre)
-        preci = findViewById(R.id.edtPrecio)
-        Modelo = findViewById(R.id.edtModelo)
-        marca = findViewById(R.id.edtMarca)
-        val toolbar: androidx.appcompat.widget.Toolbar = findViewById(R.id.tbocategoria)
+        edit = findViewById(R.id.btnActualizar2)
+        Borrar = findViewById(R.id.btnBorrar2)
+        Spin = findViewById(R.id.Spinropa2)
+        Nombre = findViewById(R.id.edtinombre2)
+        preci = findViewById(R.id.editprecio2)
+        Modelo = findViewById(R.id.editmodelo2)
+        marca = findViewById(R.id.editmarca2)
+        val toolbar: androidx.appcompat.widget.Toolbar = findViewById(R.id.tolbarcategoria2)
         setSupportActionBar(toolbar)
-
-
-
-       val listado =ListadoRopa.listadoRopaCas
+        val listado =ListadoRopa.listadoRopaForm
         val adaptadorRopa = ArrayAdapter(this, android.R.layout.simple_spinner_item, listado.map { it.nombre })
         adaptadorRopa.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-
-
-        // Adaptador para el Spinner
-// Asignar el adaptador al Spinner
-        Spin.adapter = adaptadorRopa
-
+        Spin.adapter =adaptadorRopa
         Spin.setOnItemSelectedListener(object : android.widget.AdapterView.OnItemSelectedListener {
             override fun onItemSelected(parent: android.widget.AdapterView<*>, view: android.view.View?, position: Int, id: Long) {
                 // Obtener el objeto Ropa correspondiente a la opción seleccionada
@@ -91,7 +79,7 @@ class Editar_Borrar : AppCompatActivity() {
             } else {
                 Toast.makeText(this, "No hay selección para eliminar", Toast.LENGTH_SHORT).show()
             }
-            }
+        }
         edit.setOnClickListener {
             val posicionSeleccionada = Spin.selectedItemPosition
             if (posicionSeleccionada >= 0) {
