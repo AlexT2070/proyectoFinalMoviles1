@@ -10,7 +10,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
 class Editar_Borrar : AppCompatActivity() {
-    //Instancias
+    //Instancias a componentes gráficos
     private lateinit var Borrar: Button
     private lateinit var Spin: Spinner
 
