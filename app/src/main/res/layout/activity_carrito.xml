@@ -9,7 +9,7 @@
     tools:context=".CarritoActivity">
 
     <TextView
-        android:id="@+id/txtCarrito"
+        android:id="@+id/txtTitulo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
@@ -36,12 +36,12 @@
         android:id="@+id/tableLayout"
         android:layout_width="match_parent"
         android:layout_height="400dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="37dp"
         android:background="@color/material_dynamic_neutral60"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtCarrito">
+        app:layout_constraintTop_toBottomOf="@+id/txtTitulo">
 
         <TableRow
             android:layout_width="fill_parent"
@@ -87,11 +87,12 @@
         </TableRow>
 
         <TableRow
+            android:id="@+id/Fila1"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/textView9"
+                android:id="@+id/NombreF1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Camisa"
@@ -99,7 +100,7 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/textView10"
+                android:id="@+id/MarcaF1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Nike"
@@ -107,7 +108,7 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/textView12"
+                android:id="@+id/PrecioF1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="$300"
@@ -115,7 +116,7 @@
                 android:textStyle="bold" />
 
             <Button
-                android:id="@+id/btnEliminar1"
+                android:id="@+id/btnEliminarF1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/black"
@@ -124,11 +125,12 @@
         </TableRow>
 
         <TableRow
+            android:id="@+id/Fila2"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/textView15"
+                android:id="@+id/NombreF2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Pantalón"
@@ -136,7 +138,7 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/textView16"
+                android:id="@+id/MarcaF2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Weekend"
@@ -144,7 +146,7 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/textView17"
+                android:id="@+id/PrecioF2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="$200"
@@ -152,7 +154,7 @@
                 android:textStyle="bold" />
 
             <Button
-                android:id="@+id/btnEliminar2"
+                android:id="@+id/btnEliminarF2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/black"
@@ -161,11 +163,12 @@
         </TableRow>
 
         <TableRow
+            android:id="@+id/Fila3"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/textView18"
+                android:id="@+id/NombreF3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Traje"
@@ -173,7 +176,7 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/textView19"
+                android:id="@+id/MarcaF3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Gucci"
@@ -181,7 +184,7 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/textView20"
+                android:id="@+id/PrecioF3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="$500"
@@ -189,7 +192,7 @@
                 android:textStyle="bold" />
 
             <Button
-                android:id="@+id/btnEliminar3"
+                android:id="@+id/btnEliminarF3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/black"
