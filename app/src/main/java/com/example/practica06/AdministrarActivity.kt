@@ -39,15 +39,15 @@ class AdministrarActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when(item.itemId){
             R.id.itmRopaCas -> {
-                val intent = Intent(applicationContext, Editar_Borrar::class.java)
+                val intent = Intent(this, Editar_Borrar::class.java)
                 startActivity(intent)
             }
             R.id.itmRopaForm -> {
-                val intent = Intent(applicationContext, Editar_Borrar::class.java)
+                val intent = Intent(this, Editar_Borrar::class.java)
                 startActivity(intent)
             }
             R.id.itmRopaDep -> {
-                val intent = Intent(applicationContext, Editar_Borrar::class.java)
+                val intent = Intent(this, Editar_Borrar::class.java)
                 startActivity(intent)
             }
         }
