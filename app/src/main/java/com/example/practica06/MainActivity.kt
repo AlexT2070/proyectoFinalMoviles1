@@ -13,7 +13,7 @@ class MainActivity : AppCompatActivity() {
 
     private var isAdmin: Boolean = false
 
-    // Definimos el arreglo de pacientes
+
     val ropa: Array<Ropa?> = arrayOfNulls(30)
 
     override fun onCreate(savedInstanceState: Bundle?) {
