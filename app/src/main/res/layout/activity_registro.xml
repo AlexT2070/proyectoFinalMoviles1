@@ -67,7 +67,7 @@
         android:background="@color/material_dynamic_neutral60"
         android:ems="10"
         android:hint="Numero de celular"
-        android:inputType="text"
+        android:inputType="number"
         android:minHeight="50dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edtCorreo" />
