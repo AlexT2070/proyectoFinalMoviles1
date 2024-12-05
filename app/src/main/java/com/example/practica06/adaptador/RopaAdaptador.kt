@@ -13,7 +13,7 @@ class RopaAdaptador(private val listaRopa: List<Ropa>):
             //Define el contexto de la vista para el Recycler
             val layoutInflater = LayoutInflater.from(parent.context)
             //Devuelve la vista del CardView
-            return RopaVista(layoutInflater.inflate(R.layout.card_view_prod, parent, false))
+            return RopaVista(layoutInflater.inflate(R.layout.cardview_productos_login, parent, false))
         }
 
         //Devolver la cantidad de elementos de la lista de Accesorios
