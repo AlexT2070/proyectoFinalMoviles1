@@ -50,22 +50,27 @@ class IngresoActivity : AppCompatActivity() {
             val intent = Intent(this, RegistroActivity::class.java)
             startActivity(intent)
         }
+
+
     }
 
     private fun ingresar() {
         val usuarioIngresado = usuario.text.toString()
         val contrasenaIngresada = contrasena.text.toString()
-
-        if (usuarioIngresado == "admin" && contrasenaIngresada == "12345") {
-            val intent = Intent(this, MainActivity::class.java)
-            intent.putExtra("isAdmin", true) // Usuario es administrador
-            startActivity(intent)
-        } else if (esUsuarioValido(usuarioIngresado, contrasenaIngresada)) {
-            val intent = Intent(this, MainActivity::class.java)
-            intent.putExtra("isAdmin", false) // Usuario normal
-            startActivity(intent)
-        } else {
-            Toast.makeText(this, "Usuario o contraseña incorrectos", Toast.LENGTH_SHORT).show()
+        if(usuarioIngresado.isNotBlank() && contrasenaIngresada.isNotBlank()) {
+            if (usuarioIngresado == "admin" && contrasenaIngresada == "12345") {
+                val intent = Intent(this, MainActivity::class.java)
+                intent.putExtra("isAdmin", true) // Usuario es administrador
+                startActivity(intent)
+            } else if (esUsuarioValido(usuarioIngresado, contrasenaIngresada)) {
+                val intent = Intent(this, MainActivity::class.java)
+                intent.putExtra("isAdmin", false) // Usuario normal
+                startActivity(intent)
+            } else {
+                Toast.makeText(this, "Usuario o contraseña incorrectos", Toast.LENGTH_SHORT).show()
+            }
+        }else{
+            Toast.makeText(this, "Favor de llenar los campos...", Toast.LENGTH_LONG).show()
         }
     }
 
