@@ -12,7 +12,6 @@ import androidx.core.view.WindowInsetsCompat
 import com.example.practica06.R.menu.menu_administrar_productos
 
 class AdministrarActivity : AppCompatActivity() {
-    private var isAdmin: Boolean = false
     // Definimos el arreglo de ropa
     val ropa: Array<Ropa?> = arrayOfNulls(30)
 
