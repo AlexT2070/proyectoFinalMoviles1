@@ -12,8 +12,8 @@ class RopaAdaptador(private val listaRopa: List<Ropa>):
         override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RopaVista {
             //Define el contexto de la vista para el Recycler
             val layoutInflater = LayoutInflater.from(parent.context)
-            //Devuelve la vista del CardView
-            return RopaVista(layoutInflater.inflate(R.layout.cardview_productos_login, parent, false))
+            //Devuelve la vista del CardView a la Lista de Deseos
+            return RopaVista(layoutInflater.inflate(R.layout.card_view_prod, parent, false))
         }
 
         //Devolver la cantidad de elementos de la lista de Accesorios
