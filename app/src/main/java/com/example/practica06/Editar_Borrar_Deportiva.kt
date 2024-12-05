@@ -1,6 +1,5 @@
 package com.example.practica06
 
-import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
@@ -16,7 +15,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.practica06.R.menu.menu_administrar_productos
 
-class Editar_Borrar_Formal : AppCompatActivity() {
+class Editar_Borrar_Deportiva : AppCompatActivity() {
     private lateinit var Borrar: Button
     private lateinit var Spin: Spinner
     private lateinit var edit: Button
@@ -24,27 +23,25 @@ class Editar_Borrar_Formal : AppCompatActivity() {
     private lateinit var preci: EditText
     private lateinit var Modelo: EditText
     private lateinit var marca: EditText
-
-    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_editar_borrar_formal)
+        setContentView(R.layout.activity_editar_borrar_deportiva)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-        edit = findViewById(R.id.btnActualizar2)
-        Borrar = findViewById(R.id.btnBorrar2)
-        Spin = findViewById(R.id.Spinropa2)
-        Nombre = findViewById(R.id.edtinombre2)
-        preci = findViewById(R.id.editprecio2)
-        Modelo = findViewById(R.id.editmodelo2)
-        marca = findViewById(R.id.editmarca2)
-        val toolbar: androidx.appcompat.widget.Toolbar = findViewById(R.id.tolbarcategoria2)
+        edit = findViewById(R.id.btnActualizar3)
+        Borrar = findViewById(R.id.btnBorrar3)
+        Spin = findViewById(R.id.spinropa3)
+        Nombre = findViewById(R.id.edtinombre3)
+        preci = findViewById(R.id.editprecio3)
+        Modelo = findViewById(R.id.editmodelo3)
+        marca = findViewById(R.id.editmarca3)
+        val toolbar: androidx.appcompat.widget.Toolbar = findViewById(R.id.tolbarcategoria3)
         setSupportActionBar(toolbar)
-        val listado =ListadoRopa.listadoRopaForm
+        val listado =ListadoRopa.listadoRopaDep
         val adaptadorRopa = ArrayAdapter(this, android.R.layout.simple_spinner_item, listado.map { it.nombre })
         adaptadorRopa.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         Spin.adapter =adaptadorRopa
@@ -111,6 +108,7 @@ class Editar_Borrar_Formal : AppCompatActivity() {
                 Toast.makeText(this, "No hay selección para modificar", Toast.LENGTH_SHORT).show()
             }
         }
+
     }
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(menu_administrar_productos, menu)

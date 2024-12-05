@@ -143,7 +143,7 @@ class Editar_Borrar : AppCompatActivity() {
                 startActivity(intent)
             }
             R.id.itmRopaDep -> {
-                val intent = Intent(applicationContext, Editar_Borrar::class.java)
+                val intent = Intent(applicationContext, Editar_Borrar_Deportiva::class.java)
                 startActivity(intent)
             }
         }
