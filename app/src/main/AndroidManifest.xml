@@ -54,6 +54,9 @@
         <activity
             android:name=".ListaDeseosActivity"
             android:exported="false" />
+        <activity
+            android:name=".Productos"
+            android:exported="false" />
     </application>
 
 </manifest>
