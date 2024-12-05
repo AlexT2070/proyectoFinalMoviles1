@@ -18,8 +18,7 @@
         android:title="Consultar productos" />
     <item
         android:id="@+id/itemAdmin"
-        android:title="Administrar Productos"
-         />
+        android:title="Administrar productos" />
     <item
         android:id="@+id/itemComentarios"
         android:title="Comentarios" />
