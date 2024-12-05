@@ -8,17 +8,20 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.practica06.adaptador.RopaAdaptador
 
 class ListaDeseosActivity : AppCompatActivity() {
+    private lateinit var recycler: RecyclerView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
+        setContentView(R.layout.activity_lista_deseos)
         //Inicializar el RecyclerView
         inicializarRecycler()
-    }
 
+
+
+    }
     private fun inicializarRecycler() {
         //Variable para acceder al componente Recycler
-        val recycler = findViewById<RecyclerView>(R.id.rvElementos)
+        recycler = findViewById<RecyclerView>(R.id.rvElementos)
         //Administrador del componente
         recycler.layoutManager = LinearLayoutManager(this)
         //Establecer en el adaptador la lista de productos
