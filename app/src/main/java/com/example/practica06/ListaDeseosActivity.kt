@@ -1,15 +1,12 @@
 package com.example.practica06
 
 import android.os.Bundle
-import android.widget.Toast
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.practica06.adaptador.OnRopaClickListener
-import com.example.practica06.adaptador.RopaAdaptador
 import com.example.practica06.adaptador.RopaAdaptador_Productos
-import com.example.practica06.adaptador.Singleton
+import com.example.practica06.adaptador.ListaDeseos
 
 class ListaDeseosActivity : AppCompatActivity() {
     private lateinit var adaptador: RopaAdaptador_Productos
@@ -32,13 +29,13 @@ class ListaDeseosActivity : AppCompatActivity() {
         recyclerView.layoutManager = LinearLayoutManager(this)
 
         // Aquí estamos usando la lista del Singleton
-        adaptador = RopaAdaptador_Productos(Singleton.lista, object : OnRopaClickListener {
+        adaptador = RopaAdaptador_Productos(ListaDeseos.lista, object : OnRopaClickListener {
             override fun onButtonWishList(ropa: Ropa) {
                 // Aquí puedes agregar el producto a la lista del Singleton
-                Singleton.lista.add(ropa)
+                ListaDeseos.lista.add(ropa)
 
                 // Notificamos al adaptador que se agregó un nuevo objeto dentro de la lista
-                adaptador?.notifyItemInserted(Singleton.lista.size - 1)
+                adaptador?.notifyItemInserted(ListaDeseos.lista.size - 1)
             }
         })
 

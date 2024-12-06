@@ -8,14 +8,12 @@ import android.view.MenuItem
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.practica06.R.menu.menu_administrar_productos
 import com.example.practica06.adaptador.OnRopaClickListener
 import com.example.practica06.adaptador.RopaAdaptador_Productos
-import com.example.practica06.adaptador.Singleton
+import com.example.practica06.adaptador.ListaDeseos
 
 class Productos_Deportivos : AppCompatActivity(), OnRopaClickListener {
     private lateinit var adaptador: RopaAdaptador_Productos
@@ -72,7 +70,7 @@ class Productos_Deportivos : AppCompatActivity(), OnRopaClickListener {
         // Aquí manejas el evento del botón
         Toast.makeText(this, "Clic en: ${ropa.nombre}", Toast.LENGTH_SHORT).show()
         // Agrega el producto a la lista
-        Singleton.lista.add(ropa)
+        ListaDeseos.lista.add(ropa)
         // Crea el Intent para abrir el segundo Activity
         val intent = Intent(this, ListaDeseosActivity::class.java)
 
