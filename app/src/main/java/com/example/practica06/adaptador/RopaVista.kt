@@ -26,6 +26,14 @@ class RopaVista(view: View): RecyclerView.ViewHolder(view) {
             2 -> imagen.setImageResource(R.drawable.casual02)
             3 -> imagen.setImageResource(R.drawable.casual03)
             4 -> imagen.setImageResource(R.drawable.casual04)
+            5-> imagen.setImageResource(R.drawable.formal01)
+            6->imagen.setImageResource(R.drawable.formal02)
+            7->imagen.setImageResource(R.drawable.formal03)
+            8->imagen.setImageResource(R.drawable.formal04)
+            9->imagen.setImageResource(R.drawable.deportiva01)
+            10->imagen.setImageResource(R.drawable.deportiva02)
+            11->imagen.setImageResource(R.drawable.deportiva03)
+            12->imagen.setImageResource(R.drawable.deportiva04)
             else -> imagen.setImageResource(R.drawable.casual01)
         }//when
 

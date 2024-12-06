@@ -8,22 +8,12 @@
     android:background="@color/black"
     tools:context=".Productos">
 
-    <SearchView
-        android:id="@+id/buscador"
-        android:layout_width="323dp"
-        android:layout_height="61dp"
-        android:layout_marginStart="44dp"
-        android:layout_marginTop="148dp"
-        android:background="@color/material_dynamic_neutral60"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/Recicleproduc"
         android:layout_width="345dp"
         android:layout_height="460dp"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="21dp"
         android:background="@color/material_dynamic_neutral60"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/buscador" />
@@ -50,4 +40,15 @@
         android:theme="?attr/actionBarTheme"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/buscador"
+        android:layout_width="330dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="4dp"
+        android:background="@color/material_dynamic_neutral60"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtproductos"
+        tools:ignore="MissingConstraints" />
 </androidx.constraintlayout.widget.ConstraintLayout>
