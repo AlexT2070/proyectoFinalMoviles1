@@ -12,48 +12,63 @@
         android:id="@+id/txtproductos3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="36dp"
-        android:layout_marginTop="84dp"
-        android:text="Productos disponibles"
+        android:layout_marginTop="16dp"
+        android:text="Ropa Formal"
         android:textColor="@color/white"
         android:textSize="34sp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/opciones2" />
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/opciones2"
-        android:layout_width="418dp"
+        android:layout_width="match_parent"
         android:layout_height="71dp"
-        android:layout_marginTop="1dp"
+        android:layout_marginTop="32dp"
         android:background="@color/design_default_color_error"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recile2"
-        android:layout_width="330dp"
-        android:layout_height="480dp"
-        android:layout_marginStart="16dp"
+        android:layout_width="400dp"
+        android:layout_height="330dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="160dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginEnd="8dp"
         android:background="@color/material_dynamic_neutral60"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.489"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/opciones2" />
 
-    <SearchView
-        android:id="@+id/Buscador3"
-        android:layout_width="365dp"
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/search3"
+        android:layout_width="380dp"
         android:layout_height="69dp"
-        android:layout_marginStart="36dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="76dp"
-        android:layout_marginEnd="36dp"
+        android:layout_marginEnd="16dp"
         android:background="@color/material_dynamic_neutral60"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.769"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/opciones2" />
+
+    <Button
+        android:id="@+id/btnMenu2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="176dp"
+        android:layout_marginTop="13dp"
+        android:layout_marginEnd="144dp"
+        android:background="@color/design_default_color_error"
+        android:backgroundTint="@color/design_default_color_error"
+        android:text="Menú"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/recile2" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -20,8 +20,8 @@ import com.example.practica06.adaptador.ListaDeseos
 
 
 class Productos : AppCompatActivity(), OnRopaClickListener {
-    private lateinit var buscar:SearchView
-    private lateinit var regreso: Button
+    private lateinit var buscar: androidx.appcompat.widget.SearchView
+    private lateinit var regresoMenu: Button
     private lateinit var adaptador: RopaAdaptador_Productos
     private lateinit var listaRopa: MutableList<Ropa>
 
@@ -34,18 +34,41 @@ class Productos : AppCompatActivity(), OnRopaClickListener {
         listaRopa = ListadoRopa.listadoRopaCas //productos
         //Se inicializa el adaptador
         adaptador = RopaAdaptador_Productos(listaRopa, this)
-        //Asociación a botón
-        regreso = findViewById(R.id.btnRegresoMenu)
+        //Asociación a componentes
+        regresoMenu = findViewById(R.id.btnMenu)
+        buscar = findViewById(R.id.buscador)
 
         val toolbar: androidx.appcompat.widget.Toolbar = findViewById(R.id.opciones)
         setSupportActionBar(toolbar)
         inicializarRecycler()
 
-        //Evento de regreso al Menú
-        regreso.setOnClickListener {
+        //Evento para el regreso al Menú
+        regresoMenu.setOnClickListener {
             finish()
         }
-    }
+
+        // Configuramos el listener para el SearchView
+        buscar.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                // No se requiere acción aquí, pero puede hacerse algo cuando se envía la consulta (ej., mostrar un mensaje de búsqueda)
+                return false
+            }
+
+            override fun onQueryTextChange(newText: String?): Boolean {
+                // Filtra la lista de productos a medida que el texto cambia
+                newText?.let {
+                    filterProducts(it)
+                }
+                return true
+            }
+
+            // Méthod para filtrar la lista de productos
+            private fun filterProducts(query: String) {
+                adaptador.filtrarProductos(query)
+            }
+        })//setOnQueryTextListener
+
+    }//onCreate
     private fun inicializarRecycler(){
     //Variable para acceder al componente Recycler
         val recyclerView = findViewById<RecyclerView>(R.id.Recicleproduc)
@@ -102,10 +125,17 @@ class Productos : AppCompatActivity(), OnRopaClickListener {
         }
     }//onButtonWishList
 
+    //Función que elimina de la Lista de Deseos
     override fun onButtonRemoveFromWishList(ropa: Ropa) {
         // Eliminar el producto de la lista
         ListaDeseos.lista.removeIf { it.nombre.equals(ropa.nombre, ignoreCase = true) }
         adaptador.notifyDataSetChanged() // Notificar cambios al adaptador
         Toast.makeText(this, "${ropa.nombre} eliminado de la lista de deseos.", Toast.LENGTH_SHORT).show()
     }
+
+    //Función para enviar elementos al Activity del Carrito (TableLayout)
+    override fun onButtonCarrito(ropa: Ropa) {
+        Toast.makeText(this@Productos, "Diste click en Carrito", Toast.LENGTH_SHORT).show()
+    }
+
 }

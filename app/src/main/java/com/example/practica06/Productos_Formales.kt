@@ -5,6 +5,8 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.Button
+import android.widget.SearchView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -16,8 +18,11 @@ import com.example.practica06.adaptador.RopaAdaptador_Productos
 import com.example.practica06.adaptador.ListaDeseos
 
 class Productos_Formales : AppCompatActivity(), OnRopaClickListener {
+    //Instancias
+    //private lateinit var buscar3: SearchView
     private lateinit var adaptador: RopaAdaptador_Productos
     private lateinit var listaRopa: MutableList<Ropa>
+    private lateinit var regresoMenu: Button
 
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -27,12 +32,43 @@ class Productos_Formales : AppCompatActivity(), OnRopaClickListener {
         // Inicializa la lista y el adaptador
         listaRopa = ListadoRopa.listadoRopaForm
         adaptador = RopaAdaptador_Productos(listaRopa, this)
+        val buscar3 = findViewById<androidx.appcompat.widget.SearchView>(R.id.search3)
+        //Asociación al botón
+        regresoMenu = findViewById(R.id.btnMenu2)
 
         val toolbar: androidx.appcompat.widget.Toolbar = findViewById(R.id.opciones2)
         setSupportActionBar(toolbar)
-
+        //Llamada a la inicialización del Recycler
         inicializarRecycler()
-    }
+
+        //Evento para el regreso al Menú
+        regresoMenu.setOnClickListener {
+            finish()
+        }
+
+        // Configuramos el listener para el SearchView
+        buscar3.setOnQueryTextListener(object : androidx.appcompat.widget.SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                // No se requiere acción aquí, pero puede hacerse algo cuando se envía la consulta (ej., mostrar un mensaje de búsqueda)
+                return false
+            }
+
+            override fun onQueryTextChange(newText: String?): Boolean {
+                // Filtra la lista de productos a medida que el texto cambia
+                newText?.let {
+                    filterProducts(it)
+                }
+                return true
+            }
+
+            // Méthod para filtrar la lista de productos
+            private fun filterProducts(query: String) {
+                adaptador.filtrarProductos(query)
+            }
+        })//setOnQueryTextListener
+
+    }//onCreate
+
     private fun inicializarRecycler(){
 //Variable para acceder al componente Recycler
         val recyclerView = findViewById<RecyclerView>(R.id.recile2)
@@ -95,6 +131,10 @@ class Productos_Formales : AppCompatActivity(), OnRopaClickListener {
         ListaDeseos.lista.removeIf { it.nombre.equals(ropa.nombre, ignoreCase = true) }
         adaptador.notifyDataSetChanged() // Notificar cambios al adaptador
         Toast.makeText(this, "${ropa.nombre} eliminado de la lista de deseos.", Toast.LENGTH_SHORT).show()
+    }
+
+    override fun onButtonCarrito(ropa: Ropa) {
+        Toast.makeText(this@Productos_Formales, "Diste click en Carrito", Toast.LENGTH_SHORT).show()
     }
 
 }
