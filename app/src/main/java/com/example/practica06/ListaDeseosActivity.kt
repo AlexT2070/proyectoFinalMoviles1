@@ -45,6 +45,9 @@ class ListaDeseosActivity : AppCompatActivity() {
                 adaptador.notifyDataSetChanged() // Notificar cambios al adaptador
                 Toast.makeText(this@ListaDeseosActivity, "${ropa.nombre} eliminado de la lista de deseos.", Toast.LENGTH_SHORT).show()
             }
+            override fun onButtonCarrito(ropa: Ropa) {
+                Toast.makeText(this@ListaDeseosActivity, "Diste click en Carrito", Toast.LENGTH_SHORT).show()
+            }
         })
 
         // Establecemos el adaptador con la lista del Singleton
