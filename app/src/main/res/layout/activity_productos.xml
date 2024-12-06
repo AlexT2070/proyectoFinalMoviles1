@@ -10,13 +10,15 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/Recicleproduc"
-        android:layout_width="345dp"
-        android:layout_height="460dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="21dp"
+        android:layout_width="330dp"
+        android:layout_height="480dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="232dp"
+        android:layout_marginEnd="16dp"
         android:background="@color/material_dynamic_neutral60"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buscador" />
+        app:layout_constraintTop_toTopOf="@+id/opciones" />
 
     <TextView
         android:id="@+id/txtproductos"
@@ -41,14 +43,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <androidx.appcompat.widget.SearchView
+    <SearchView
         android:id="@+id/buscador"
-        android:layout_width="330dp"
-        android:layout_height="70dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="4dp"
+        android:layout_width="365dp"
+        android:layout_height="69dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="36dp"
         android:background="@color/material_dynamic_neutral60"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtproductos"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintTop_toBottomOf="@+id/txtproductos" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

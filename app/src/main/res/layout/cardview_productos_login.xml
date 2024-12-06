@@ -8,29 +8,29 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/Fondo"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="257dp"
         android:background="#000000">
 
         <TextView
             android:id="@+id/txtName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="92dp"
+            android:layout_width="173dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="29dp"
             android:layout_marginTop="16dp"
-            android:layout_marginEnd="83dp"
+            android:layout_marginEnd="16dp"
             android:text="Artículo"
             android:textColor="@color/white"
-            android:textSize="24sp"
+            android:textSize="16sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.333"
-            app:layout_constraintStart_toEndOf="@id/imgProd"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/imgProd"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/txtBrand"
-            android:layout_width="175dp"
-            android:layout_height="24dp"
+            android:layout_width="183dp"
+            android:layout_height="28dp"
             android:layout_marginStart="28dp"
             android:layout_marginTop="16dp"
             android:text="Marca"
@@ -41,8 +41,8 @@
 
         <TextView
             android:id="@+id/txtModel"
-            android:layout_width="170dp"
-            android:layout_height="35dp"
+            android:layout_width="183dp"
+            android:layout_height="38dp"
             android:layout_marginStart="28dp"
             android:layout_marginTop="8dp"
             android:text="Modelo"
@@ -53,8 +53,8 @@
 
         <TextView
             android:id="@+id/txtPrice"
-            android:layout_width="182dp"
-            android:layout_height="23dp"
+            android:layout_width="181dp"
+            android:layout_height="40dp"
             android:layout_marginStart="28dp"
             android:layout_marginTop="4dp"
             android:text="Precio"
@@ -80,12 +80,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="41dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="4dp"
             android:layout_marginEnd="16dp"
             android:backgroundTint="@color/design_default_color_error"
             android:text="Marcar Deseado"
             android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toEndOf="@+id/imgProd"
             app:layout_constraintTop_toBottomOf="@+id/txtPrice" />
 
