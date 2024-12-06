@@ -37,6 +37,9 @@ class CarritoActivity : AppCompatActivity() {
         comprar = findViewById(R.id.btnComprar)
         regresar = findViewById(R.id.btnBack)
         calculoT = findViewById(R.id.txtCalculo)
+        eliminar1= findViewById(R.id.btnEliminarF1)
+
+        /*
         fila1 = findViewById(R.id.Fila1)
         nombre1= findViewById(R.id.NombreF1)
         marca1= findViewById(R.id.MarcaF1)
@@ -51,7 +54,7 @@ class CarritoActivity : AppCompatActivity() {
         nombre3= findViewById(R.id.NombreF3)
         marca3= findViewById(R.id.MarcaF3)
         precio3= findViewById(R.id.PrecioF3)
-        eliminar3= findViewById(R.id.btnEliminarF3)
+        eliminar3= findViewById(R.id.btnEliminarF3)*/
 
         comprar.setOnClickListener{
 
