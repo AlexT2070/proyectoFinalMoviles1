@@ -23,7 +23,6 @@ class Productos : AppCompatActivity(), OnRopaClickListener {
     private lateinit var buscar:SearchView
     private lateinit var regreso: Button
     private lateinit var adaptador: RopaAdaptador_Productos
-    private lateinit var adaptador1: RopaAdaptador
     private lateinit var listaRopa: MutableList<Ropa>
 
     @SuppressLint("MissingInflatedId")
@@ -31,13 +30,11 @@ class Productos : AppCompatActivity(), OnRopaClickListener {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_productos)
-        // Inicializa la lista y el adaptador
+        // Inicializa la lista
         listaRopa = ListadoRopa.listadoRopaCas //productos
-
+        //Se inicializa el adaptador
         adaptador = RopaAdaptador_Productos(listaRopa, this)
-        adaptador1 = RopaAdaptador(listaRopa, this)
-
-        //Asociación
+        //Asociación a botón
         regreso = findViewById(R.id.btnRegresoMenu)
 
         val toolbar: androidx.appcompat.widget.Toolbar = findViewById(R.id.opciones)
@@ -92,18 +89,23 @@ class Productos : AppCompatActivity(), OnRopaClickListener {
         } else {
             // Agregar el producto a la lista si no existe
             ListaDeseos.lista.add(ropa)
-
             // Mostrar mensaje de éxito
             Toast.makeText(this, "${ropa.nombre} agregado a la lista de deseos.", Toast.LENGTH_SHORT).show()
+            adaptador.notifyDataSetChanged() // Notificar cambios al adaptador
 
             // Crea el Intent para abrir el segundo Activity
             val intent = Intent(this, ListaDeseosActivity::class.java)
-
             // Pasa el objeto Ropa como extra hacia el otro Activity
             intent.putExtra("ropaSeleccionada", ropa)
-
             // Inicia el segundo Activity
             startActivity(intent)
         }
+    }//onButtonWishList
+
+    override fun onButtonRemoveFromWishList(ropa: Ropa) {
+        // Eliminar el producto de la lista
+        ListaDeseos.lista.removeIf { it.nombre.equals(ropa.nombre, ignoreCase = true) }
+        adaptador.notifyDataSetChanged() // Notificar cambios al adaptador
+        Toast.makeText(this, "${ropa.nombre} eliminado de la lista de deseos.", Toast.LENGTH_SHORT).show()
     }
 }
