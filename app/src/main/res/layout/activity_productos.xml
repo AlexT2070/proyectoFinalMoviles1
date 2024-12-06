@@ -8,47 +8,65 @@
     android:background="@color/black"
     tools:context=".Productos">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/Recicleproduc"
-        android:layout_width="345dp"
-        android:layout_height="460dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="21dp"
-        android:background="@color/material_dynamic_neutral60"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buscador" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/txtproductos"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="36dp"
-        android:layout_marginTop="84dp"
-        android:text="Productos disponibles"
-        android:textColor="@color/white"
-        android:textSize="34sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/opciones"
+            android:layout_width="409dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="1dp"
+            android:background="@color/design_default_color_error"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="?attr/actionBarTheme" />
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/opciones"
-        android:layout_width="409dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="1dp"
-        android:background="@color/design_default_color_error"
-        android:minHeight="?attr/actionBarSize"
-        android:theme="?attr/actionBarTheme"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:id="@+id/txtproductos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Productos disponibles"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="34sp"
+            android:translationY="10dp" />
 
-    <androidx.appcompat.widget.SearchView
-        android:id="@+id/buscador"
-        android:layout_width="330dp"
-        android:layout_height="70dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="4dp"
-        android:background="@color/material_dynamic_neutral60"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtproductos"
-        tools:ignore="MissingConstraints" />
+        <androidx.appcompat.widget.SearchView
+            android:id="@+id/buscador"
+            android:layout_width="330dp"
+            android:layout_height="70dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="4dp"
+            android:background="@color/material_dynamic_neutral60"
+            android:translationY="10dp"
+            tools:ignore="MissingConstraints">
+
+        </androidx.appcompat.widget.SearchView>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/Recicleproduc"
+            android:layout_width="345dp"
+            android:layout_height="400dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="21dp"
+            android:background="@color/material_dynamic_neutral60">
+
+        </androidx.recyclerview.widget.RecyclerView>
+
+        <Button
+            android:id="@+id/btnRegresoMenu"
+            android:layout_width="143dp"
+            android:layout_height="65dp"
+            android:layout_marginStart="160dp"
+            android:layout_marginTop="100dp"
+            android:layout_marginEnd="160dp"
+            android:background="@color/design_default_color_error"
+            android:text="Regresar a Menú"
+            android:textSize="16sp"
+            android:translationX="-20dp"
+            android:translationY="-55dp" />
+
+    </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

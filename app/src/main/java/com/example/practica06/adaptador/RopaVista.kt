@@ -1,6 +1,7 @@
 package com.example.practica06.adaptador
 
 import android.view.View
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
@@ -14,6 +15,7 @@ class RopaVista(view: View): RecyclerView.ViewHolder(view) {
     private val modelo = view.findViewById<TextView>(R.id.txtModel)
     private val precio = view.findViewById<TextView>(R.id.txtPrice)
     private val imagen = view.findViewById<ImageView>(R.id.imgProd)
+    private val btnWishList = view.findViewById<Button>(R.id.btnDeseado) // Tu botón en el CardView
 
     //Se ejecutará por cada producto del RecyclerView
     fun devolver(ropaModelo: Ropa){
@@ -38,4 +40,11 @@ class RopaVista(view: View): RecyclerView.ViewHolder(view) {
         }//when
 
     }//devolver
+
+    //Metódo para llamar a la interfaz OnRopaClickListener
+    fun configurarEvento(ropa: Ropa, listener: OnRopaClickListener) {
+        btnWishList.setOnClickListener {
+            listener.onButtonWishList(ropa) // Llama al méthod de la interfaz
+        }
+    }
 }

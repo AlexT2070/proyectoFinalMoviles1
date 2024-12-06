@@ -19,19 +19,19 @@
 
         <TextView
             android:id="@+id/txtWishList"
-            android:layout_width="180dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Lista de deseos"
+            android:textAlignment="center"
             android:textColor="@color/white"
             android:textSize="24sp"
             android:textStyle="bold"
-            android:translationX="120dp"
             android:translationY="40dp" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvElementos"
             android:layout_width="match_parent"
-            android:layout_height="410dp"
+            android:layout_height="320dp"
             android:background="@color/material_dynamic_neutral60"
             android:backgroundTint="@color/material_dynamic_neutral60"
             android:translationY="60dp"
