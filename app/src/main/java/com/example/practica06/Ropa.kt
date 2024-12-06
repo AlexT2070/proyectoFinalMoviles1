@@ -1,5 +1,7 @@
 package com.example.practica06
 
+import java.io.Serializable
+
 data class Ropa (
     //Atributos de la clase "Ropa"
     var nombre: String = "none",
@@ -9,14 +11,15 @@ data class Ropa (
     var cantidad: Int = 0,
     var descripcion: String = "",
     val imagen: Int
-){
-    // Method to calcule Total Purchase
-    fun calcularTotal(): Double {
-        return precio * cantidad
+) : Serializable
+    {
+        // Method to calcule Total Purchase
+        fun calcularTotal(): Double {
+            return precio * cantidad
+        }
+        //Validation of an attribute
+        init {
+            require(precio >= 0){"El precio no puede ser negativo"}
+            require(cantidad >= 0){"La cantidad no puede ser negativa"}
+        }
     }
-    //Validation of an attribute
-    init {
-        require(precio >= 0){"El precio no puede ser negativo"}
-        require(cantidad >= 0){"La cantidad no puede ser negativa"}
-    }
-}
