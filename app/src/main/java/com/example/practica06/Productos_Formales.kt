@@ -65,19 +65,29 @@ class Productos_Formales : AppCompatActivity(), OnRopaClickListener {
 
     }//onOptionsItemSelected
 
+    //Función del botón que envía a la Lista de Deseos
     override fun onButtonWishList(ropa: Ropa) {
-        // Aquí manejas el evento del botón
-        Toast.makeText(this, "Clic en: ${ropa.nombre}", Toast.LENGTH_SHORT).show()
-        // Agrega el producto a la lista
-        ListaDeseos.lista.add(ropa)
-        // Crea el Intent para abrir el segundo Activity
-        val intent = Intent(this, ListaDeseosActivity::class.java)
+        // Validar si el producto ya existe en la lista
+        val existe = ListaDeseos.lista.any { it.nombre.equals(ropa.nombre, ignoreCase = true) }
+        if (existe) {
+            // Mostrar mensaje si el producto ya está en la lista
+            Toast.makeText(this, "${ropa.nombre} ya está en la lista de deseos.", Toast.LENGTH_SHORT).show()
+        } else {
+            // Agregar el producto a la lista si no existe
+            ListaDeseos.lista.add(ropa)
 
-        // Pasa el objeto Ropa como extra hacia el otro Activity
-        intent.putExtra("ropaSeleccionada", ropa)
+            // Mostrar mensaje de éxito
+            Toast.makeText(this, "${ropa.nombre} agregado a la lista de deseos.", Toast.LENGTH_SHORT).show()
 
-        // Inicia el segundo Activity
-        startActivity(intent)
+            // Crea el Intent para abrir el segundo Activity
+            val intent = Intent(this, ListaDeseosActivity::class.java)
+
+            // Pasa el objeto Ropa como extra hacia el otro Activity
+            intent.putExtra("ropaSeleccionada", ropa)
+
+            // Inicia el segundo Activity
+            startActivity(intent)
+        }
     }
 
 }
