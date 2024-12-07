@@ -5,6 +5,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.practica06.adaptador.CarritoManager
 import com.example.practica06.adaptador.OnRopaClickListener
 import com.example.practica06.adaptador.RopaAdaptador_Productos
 import com.example.practica06.adaptador.ListaDeseos
@@ -48,6 +49,9 @@ class ListaDeseosActivity : AppCompatActivity() {
             override fun onButtonCarrito(ropa: Ropa) {
                 ListaDeseos.carrito.add(ropa)
                 Toast.makeText(this@ListaDeseosActivity, "${ropa.nombre} agregado al carrito.", Toast.LENGTH_SHORT).show()
+                adaptador.notifyDataSetChanged() //Notifica al Adaptador que hubo un cambio en el carrito
+                //Llama a la función del contador (para ir sumando el numero de elementos)
+                CarritoManager.agregarProducto(ropa)
                 adaptador.notifyDataSetChanged() //Notifica al Adaptador que hubo un cambio en el carrito
             }
         })
