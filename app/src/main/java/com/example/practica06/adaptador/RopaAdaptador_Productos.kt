@@ -48,6 +48,7 @@ class RopaAdaptador_Productos(private val listaRopa: MutableList<Ropa>, private 
         //Devolver el CardView
         holder.devolver(item)
         holder.configurarEvento(item, listener)
+        holder.configurarEventoCarrito(item, listener)
     }
 
 }//Recycler

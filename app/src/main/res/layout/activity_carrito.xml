@@ -33,10 +33,11 @@
         app:layout_constraintTop_toBottomOf="@+id/txtCalculo" />
 
     <TableLayout
-        android:id="@+id/tableLayout"
+        android:id="@+id/tblCarrito"
         android:layout_width="match_parent"
         android:layout_height="400dp"
         android:layout_marginTop="37dp"
+
         android:background="@color/material_dynamic_neutral60"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -44,7 +45,8 @@
         app:layout_constraintTop_toBottomOf="@+id/txtTitulo">
 
         <TableRow
-            android:layout_width="fill_parent"
+            android:id="@+id/tbrCabeceras"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@color/design_default_color_error">
 
@@ -68,7 +70,7 @@
 
             <TextView
                 android:id="@+id/txtPrecioC"
-                android:layout_width="wrap_content"
+                android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:padding="20dp"
                 android:text="Precio"
@@ -86,123 +88,10 @@
                 android:translationX="8dp" />
         </TableRow>
 
-        <TableRow
-            android:id="@+id/Fila1"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <TextView
-                android:id="@+id/NombreF1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Camisa"
-                android:textSize="18sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/MarcaF1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Nike"
-                android:textSize="18sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/PrecioF1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="$300"
-                android:textSize="18sp"
-                android:textStyle="bold" />
-
-            <Button
-                android:id="@+id/btnEliminarF1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:backgroundTint="@color/black"
-                android:text="Eliminar"
-                android:translationX="8dp" />
-        </TableRow>
-
-        <TableRow
-            android:id="@+id/Fila2"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <TextView
-                android:id="@+id/NombreF2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Pantalón"
-                android:textSize="18sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/MarcaF2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Weekend"
-                android:textSize="18sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/PrecioF2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="$200"
-                android:textSize="18sp"
-                android:textStyle="bold" />
-
-            <Button
-                android:id="@+id/btnEliminarF2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:backgroundTint="@color/black"
-                android:text="Eliminar"
-                android:translationX="8dp" />
-        </TableRow>
-
-        <TableRow
-            android:id="@+id/Fila3"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <TextView
-                android:id="@+id/NombreF3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Traje"
-                android:textSize="18sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/MarcaF3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Gucci"
-                android:textSize="18sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/PrecioF3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="$500"
-                android:textSize="18sp"
-                android:textStyle="bold" />
-
-            <Button
-                android:id="@+id/btnEliminarF3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:backgroundTint="@color/black"
-                android:text="Eliminar"
-                android:translationX="8dp" />
-        </TableRow>
     </TableLayout>
 
     <TextView
-        android:id="@+id/txtTotal"
+        android:id="@+id/Total"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="178dp"
@@ -215,7 +104,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.521"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tableLayout" />
+        app:layout_constraintTop_toBottomOf="@+id/tblCarrito" />
 
     <Button
         android:id="@+id/btnBack"
@@ -235,11 +124,11 @@
         android:layout_marginStart="165dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="188dp"
-        android:text="$1000"
+        android:text="$0"
         android:textColor="@color/white"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtTotal" />
+        app:layout_constraintTop_toBottomOf="@+id/Total" />
 </androidx.constraintlayout.widget.ConstraintLayout>

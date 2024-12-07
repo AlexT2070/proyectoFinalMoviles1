@@ -46,7 +46,9 @@ class ListaDeseosActivity : AppCompatActivity() {
                 Toast.makeText(this@ListaDeseosActivity, "${ropa.nombre} eliminado de la lista de deseos.", Toast.LENGTH_SHORT).show()
             }
             override fun onButtonCarrito(ropa: Ropa) {
-                Toast.makeText(this@ListaDeseosActivity, "Diste click en Carrito", Toast.LENGTH_SHORT).show()
+                ListaDeseos.carrito.add(ropa)
+                Toast.makeText(this@ListaDeseosActivity, "${ropa.nombre} agregado al carrito.", Toast.LENGTH_SHORT).show()
+                adaptador.notifyDataSetChanged() //Notifica al Adaptador que hubo un cambio en el carrito
             }
         })
 

@@ -16,6 +16,7 @@ class RopaVista(view: View): RecyclerView.ViewHolder(view) {
     private val precio = view.findViewById<TextView>(R.id.txtPrice)
     private val imagen = view.findViewById<ImageView>(R.id.imgProd)
     private val btnWishList = view.findViewById<Button>(R.id.btnDeseado) // Tu botón en el CardView
+    private val btnCarrito = view.findViewById<Button>(R.id.btnComprar)
 
     //Se ejecutará por cada producto del RecyclerView
     fun devolver(ropaModelo: Ropa) {
@@ -57,6 +58,12 @@ class RopaVista(view: View): RecyclerView.ViewHolder(view) {
                 listener.onButtonWishList(ropa)
             }
         }
-    }//configurarEvento
+    }//configurarEvento-lista
+
+    fun configurarEventoCarrito(ropa: Ropa, listener: OnRopaClickListener) {
+        btnCarrito.setOnClickListener {
+            listener.onButtonCarrito(ropa) // Llama al method para agregar al carrito
+        }
+    }
 
 }//class

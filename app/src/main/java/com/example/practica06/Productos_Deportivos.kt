@@ -134,6 +134,8 @@ class Productos_Deportivos : AppCompatActivity(), OnRopaClickListener {
     }
 
     override fun onButtonCarrito(ropa: Ropa) {
-        Toast.makeText(this@Productos_Deportivos, "Diste click en Carrito", Toast.LENGTH_SHORT).show()
+        ListaDeseos.carrito.add(ropa)
+        Toast.makeText(this, "${ropa.nombre} agregado al carrito.", Toast.LENGTH_SHORT).show()
+        adaptador.notifyDataSetChanged() //Notifica al Adaptador que hubo un cambio en el carrito
     }
 }
