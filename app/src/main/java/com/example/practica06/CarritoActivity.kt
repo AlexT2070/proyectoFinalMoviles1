@@ -17,6 +17,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.example.practica06.adaptador.CarritoManager
 import com.example.practica06.adaptador.ListaDeseos
 
 class CarritoActivity : AppCompatActivity() {
@@ -44,10 +45,11 @@ class CarritoActivity : AppCompatActivity() {
 
         //Eventos de los botones después de que se tienen los productos a comprar
         comprar.setOnClickListener {
-            Toast.makeText(this, "Compra realizada", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Compra realizada!", Toast.LENGTH_SHORT).show()
         }
         regresar.setOnClickListener {
             Toast.makeText(this, "Regreso a la ventana de Productos", Toast.LENGTH_LONG).show()
+            finish() //Regreso al menú
         }
 
     }//onCreate
@@ -118,6 +120,9 @@ class CarritoActivity : AppCompatActivity() {
                     ListaDeseos.carrito.remove(ropa)
                     llenarCarrito() // Actualiza la tabla
                     Toast.makeText(this@CarritoActivity, "${ropa.nombre} eliminado del carrito.", Toast.LENGTH_SHORT).show()
+
+                    // Actualiza el LiveData del carrito (vinculado al badge)
+                    CarritoManager.eliminarProducto(ropa)
                 }
             }
 
