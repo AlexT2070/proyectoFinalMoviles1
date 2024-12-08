@@ -13,7 +13,6 @@ import androidx.appcompat.widget.SearchView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.practica06.R.menu.menu_administrar_productos
-import com.example.practica06.adaptador.CarritoManager
 import com.example.practica06.adaptador.OnRopaClickListener
 import com.example.practica06.adaptador.RopaAdaptador
 import com.example.practica06.adaptador.RopaAdaptador_Productos
@@ -136,11 +135,9 @@ class Productos : AppCompatActivity(), OnRopaClickListener {
 
     //Función para enviar elementos al Activity del Carrito (TableLayout)
     override fun onButtonCarrito(ropa: Ropa) {
-        //Se agrega el producto al carrito
         ListaDeseos.carrito.add(ropa)
         Toast.makeText(this, "${ropa.nombre} agregado al carrito.", Toast.LENGTH_SHORT).show()
-        //Llama a la función del contador (para ir sumando el numero de elementos)
-        CarritoManager.agregarProducto(ropa)
+
         adaptador.notifyDataSetChanged() //Notifica al Adaptador que hubo un cambio en el carrito
     }
 

@@ -33,6 +33,16 @@ class IngresoActivity : AppCompatActivity() {
 
         preferences = getSharedPreferences("preferenciasUsuario", MODE_PRIVATE)
 
+        // Recuperar la última sesión si está guardada
+        val usuarioGuardado = preferences.getString("lastUsuario", null)
+        val contrasenaGuardada = preferences.getString("lastContrasena", null)
+
+        if (usuarioGuardado != null && contrasenaGuardada != null) {
+            usuario.setText(usuarioGuardado)
+            contrasena.setText(contrasenaGuardada)
+            guardarse.isChecked = true
+        }
+        
         ingresar.setOnClickListener {
             ingresar()
         }
