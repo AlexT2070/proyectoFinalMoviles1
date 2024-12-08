@@ -48,7 +48,7 @@ class CarritoActivity : AppCompatActivity() {
             Toast.makeText(this, "Compra realizada!", Toast.LENGTH_SHORT).show()
         }
         regresar.setOnClickListener {
-            Toast.makeText(this, "Regreso a la ventana de Productos", Toast.LENGTH_LONG).show()
+            Toast.makeText(this, "Regreso a la ventana del Menú!", Toast.LENGTH_LONG).show()
             finish() //Regreso al menú
         }
 

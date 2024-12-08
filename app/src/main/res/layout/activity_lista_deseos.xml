@@ -37,6 +37,13 @@
             android:translationY="60dp"
             tools:itemCount="20" />
 
+        <Button
+            android:id="@+id/btnVolver"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/design_default_color_error"
+            android:text="Ventana anterior" />
+
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

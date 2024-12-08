@@ -1,6 +1,7 @@
 package com.example.practica06
 
 import android.os.Bundle
+import android.widget.Button
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -11,11 +12,16 @@ import com.example.practica06.adaptador.RopaAdaptador_Productos
 import com.example.practica06.adaptador.ListaDeseos
 
 class ListaDeseosActivity : AppCompatActivity() {
+    //Instancias
     private lateinit var adaptador: RopaAdaptador_Productos
+    private lateinit var regresoMenu: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_lista_deseos)
+        //Asociación al componente
+        regresoMenu = findViewById(R.id.btnVolver)
+
         // Recibe el objeto Ropa enviado
         val ropaSeleccionada = intent.getSerializableExtra("ropaSeleccionada") as? Ropa
         //Validamos que no llegue el objeto nulo
@@ -28,6 +34,12 @@ class ListaDeseosActivity : AppCompatActivity() {
         }
         //Inicializar el RecyclerView
         inicializarRecycler()
+
+        //Evento de regreso al menú
+        regresoMenu.setOnClickListener {
+            Toast.makeText(this@ListaDeseosActivity, "Regreso a la ventana anterior!", Toast.LENGTH_SHORT).show()
+            finish()
+        }
 
     }
     private fun inicializarRecycler() {
