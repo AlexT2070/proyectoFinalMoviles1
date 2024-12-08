@@ -37,7 +37,7 @@ class ListaDeseosActivity : AppCompatActivity() {
 
         //Evento de regreso al menú
         regresoMenu.setOnClickListener {
-            Toast.makeText(this@ListaDeseosActivity, "Regreso a la ventana anterior!", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this@ListaDeseosActivity, "Regreso a ventana anterior!", Toast.LENGTH_SHORT).show()
             finish()
         }
 
