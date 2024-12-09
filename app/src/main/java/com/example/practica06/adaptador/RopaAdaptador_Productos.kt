@@ -46,9 +46,9 @@ class RopaAdaptador_Productos(private val listaRopa: MutableList<Ropa>, private 
         //Indicamos el Accesorio(item) de la lista de Accesorios
         val item = listaRopaMostrar[position] // Usa la lista filtrada
         //Devolver el CardView
-        holder.devolver(item)
-        holder.configurarEvento(item, listener)
-        holder.configurarEventoCarrito(item, listener)
+        holder.devolver(item)//elemento
+        holder.configurarEvento(item, listener)//WishList
+        holder.configurarEventoCarrito(item, listener)//Carrito
     }
 
 }//Recycler
