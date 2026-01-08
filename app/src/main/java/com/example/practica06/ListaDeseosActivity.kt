@@ -1,5 +1,6 @@
 package com.example.practica06
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.widget.Button
 import android.widget.Toast
@@ -52,12 +53,14 @@ class ListaDeseosActivity : AppCompatActivity() {
             override fun onButtonWishList(ropa: Ropa) {
                 onButtonWishList(ropa)
             }
+            @SuppressLint("NotifyDataSetChanged")
             override fun onButtonRemoveFromWishList(ropa: Ropa) {
                 // Eliminar el producto de la lista
                 ListaDeseos.lista.removeIf { it.nombre.equals(ropa.nombre, ignoreCase = true) }
                 adaptador.notifyDataSetChanged() // Notificar cambios al adaptador
                 Toast.makeText(this@ListaDeseosActivity, "${ropa.nombre}fue eliminado de la lista de deseos.", Toast.LENGTH_SHORT).show()
             }
+            @SuppressLint("NotifyDataSetChanged")
             override fun onButtonCarrito(ropa: Ropa) {
                 ListaDeseos.carrito.add(ropa)
                 Toast.makeText(this@ListaDeseosActivity, "${ropa.nombre} agregado al carrito.", Toast.LENGTH_SHORT).show()
