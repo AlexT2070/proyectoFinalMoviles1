@@ -56,7 +56,7 @@ class ListaDeseosActivity : AppCompatActivity() {
                 // Eliminar el producto de la lista
                 ListaDeseos.lista.removeIf { it.nombre.equals(ropa.nombre, ignoreCase = true) }
                 adaptador.notifyDataSetChanged() // Notificar cambios al adaptador
-                Toast.makeText(this@ListaDeseosActivity, "${ropa.nombre} eliminado de la lista de deseos.", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this@ListaDeseosActivity, "${ropa.nombre}fue eliminado de la lista de deseos.", Toast.LENGTH_SHORT).show()
             }
             override fun onButtonCarrito(ropa: Ropa) {
                 ListaDeseos.carrito.add(ropa)
